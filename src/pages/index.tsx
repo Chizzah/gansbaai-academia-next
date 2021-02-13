@@ -15,7 +15,39 @@ const Index = ({ file }) => {
     fields: [{ name: "title", component: "text" }],
   };
 
-  const [data, form] = useGithubJsonForm(file, formOptions);
+  const heroGroup = {
+    label: "Home",
+    fields: [
+      {
+        label: "Hero",
+        name: "hero",
+        description: "hero",
+        component: "group",
+        fields: [
+          {
+            label: "Image",
+            name: "image",
+            description: "image",
+            component: "image",
+          },
+          {
+            label: "Heading",
+            name: "heading",
+            description: "heading",
+            component: "text",
+          },
+          {
+            label: "Paragraph",
+            name: "para",
+            description: "paragraph",
+            component: "text",
+          },
+        ],
+      },
+    ],
+  };
+
+  const [data, form] = useGithubJsonForm(file, heroGroup);
   usePlugin(form);
 
   // const formConfig = {
@@ -63,7 +95,8 @@ const Index = ({ file }) => {
         {/* Hero */}
         <section className="hero">
           <Image
-            src="/images/gansbaai-academia-home-hero.jpg"
+            // src="/images/gansbaai-academia-home-hero.jpg"
+            src={data.image}
             alt="Mountains"
             layout="responsive"
             width="1920"
@@ -72,8 +105,10 @@ const Index = ({ file }) => {
           />
           <div className="hero_overlay" />
           <div className="hero_content">
-            <h1>Gansbaai Academia</h1>
-            <p>Spread your wings</p>
+            {/* <h1>Gansbaai Academia</h1>
+            <p>Spread your wings</p> */}
+            <h1>{data.heading}</h1>
+            <p>{data.para}</p>
           </div>
         </section>
 
@@ -139,6 +174,8 @@ const Index = ({ file }) => {
             </div>
           </div>
         </section> */}
+
+        {/* About */}
 
         <section className="py-5 container-fluid bg-light">
           <div className="container">
