@@ -337,7 +337,7 @@ export const getStaticProps: GetStaticProps = async function ({
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
-      fileRelativePath: "content/home.json",
+      fileRelativePath: "content/index.json",
       parse: parseJson,
     });
   }
