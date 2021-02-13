@@ -1,15 +1,23 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { useForm, usePlugin } from "tinacms";
-import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { GetStaticProps } from "next";
+import { usePlugin } from "tinacms";
+import { useGithubJsonForm } from "react-tinacms-github";
+import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
 const Index = ({ file }) => {
-  const data = file.data;
+  const formOptions = {
+    label: "Home Page",
+    fields: [{ name: "title", component: "text" }],
+  };
+
+  const [data, form] = useGithubJsonForm(file, formOptions);
+  usePlugin(form);
+
   // const formConfig = {
   //   id: "home-welcome",
   //   label: "Edit Home Welcome",
