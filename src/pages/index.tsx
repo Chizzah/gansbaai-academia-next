@@ -1,11 +1,49 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useForm, usePlugin } from "tinacms";
+import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
+import { GetStaticProps } from "next";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-const Index = () => {
+const Index = ({ file }) => {
+  const data = file.data;
+  // const formConfig = {
+  //   id: "home-welcome",
+  //   label: "Edit Home Welcome",
+  //   fields: [
+  //     {
+  //       name: "heading",
+  //       label: "Heading",
+  //       component: "text",
+  //     },
+  //     {
+  //       name: "para_1",
+  //       label: "Para 1",
+  //       component: "textarea",
+  //     },
+  //     {
+  //       name: "para_2",
+  //       label: "Para 2",
+  //       component: "textarea",
+  //     },
+  //     {
+  //       name: "button",
+  //       label: "Button",
+  //       component: "text",
+  //     },
+  //   ],
+  //   onSubmit: async () => {
+  //     window.alert("Saved!");
+  //   },
+  // };
+
+  // const [editableData, form] = useForm(formConfig);
+
+  // usePlugin(form);
+
   return (
     <>
       <Head>
@@ -36,7 +74,31 @@ const Index = () => {
 
         {/* Welcome */}
 
-        <section className="py-5 mt-5 container-fluid">
+        <div className="container-fluid">
+          <div className="container">
+            <h1>{data.title}</h1>
+          </div>
+        </div>
+        {/* <section className="py-5 mt-5 container-fluid">
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-sm-6 px-sm-5">
+                <h2 className="py-sm-5">{editableData.heading}</h2>
+                <p>{editableData.para_1}</p>
+                <p>{editableData.para_2}</p>
+              </div>
+              <div className="col-12 col-sm-6 d-sm-flex justify-content-center align-items-end">
+                <Link href="/about">
+                  <a className="fs-sm-2 fw-bold text-uppercase text-danger">
+                    {editableData.button}
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+        {/* <section className="py-5 mt-5 container-fluid">
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-6 px-sm-5">
@@ -68,7 +130,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="py-5 container-fluid bg-light">
           <div className="container">
@@ -189,7 +251,7 @@ const Index = () => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">News Post One</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
+                    <h6 className="card-subtitle mb-2 text-muted">
                       by Robin Thicke
                     </h6>
                     <p className="card-text">
@@ -216,7 +278,7 @@ const Index = () => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">News Post Two</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
+                    <h6 className="card-subtitle mb-2 text-muted">
                       by Mariah Carey
                     </h6>
                     <p className="card-text">
@@ -243,7 +305,9 @@ const Index = () => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">News Post Three</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">by Sam Smith</h6>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      by Sam Smith
+                    </h6>
                     <p className="card-text">
                       Soufflé chocolate bar candy. Tiramisu cake danish
                       chocolate cake jujubes dessert gummi bears. Cheesecake
@@ -264,6 +328,30 @@ const Index = () => {
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async function ({
+  preview,
+  previewData,
+}) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "content/home.json",
+      parse: parseJson,
+    });
+  }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: "content/home.json",
+        data: (await import("../../content/index.json")).default,
+      },
+    },
+  };
 };
 
 export default Index;
