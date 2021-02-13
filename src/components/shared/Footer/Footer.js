@@ -1,12 +1,14 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
-    <footer className="bg-light text-center text-lg-start pt-5 bg-dark text-light">
+    <footer className="pt-5 text-center bg-light text-lg-start bg-dark text-light">
       {/* Grid container  */}
       <div className="container p-4">
         {/* Grid row */}
         <div className="row">
           {/* Grid column */}
-          <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <div className="mb-4 col-lg-6 col-md-12 mb-md-0">
             <h5 className="text-uppercase">Footer Content</h5>
 
             <p>
@@ -19,42 +21,58 @@ const Footer = () => {
           {/* Grid column */}
 
           {/* Grid column */}
-          <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <div className="mb-4 col-lg-3 col-md-6 mb-md-0">
             <h5 className="text-uppercase">Links</h5>
 
-            <ul className="list-unstyled mb-0">
+            <ul className="mb-0 list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <Link href="#">
+                  <a className="text-light">Link 1</a>
+                </Link>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <Link href="#">
+                  <a className="text-light">Link 2</a>
+                </Link>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <Link href="#">
+                  <a className="text-light">Link 3</a>
+                </Link>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <Link href="#">
+                  <a className="text-light">Link 4</a>
+                </Link>
               </li>
             </ul>
           </div>
           {/* Grid column */}
 
           {/* Grid column */}
-          <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase mb-0">Links</h5>
+          <div className="mb-4 col-lg-3 col-md-6 mb-md-0">
+            <h5 className="mb-0 text-uppercase">Links</h5>
 
             <ul className="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <Link href="#">
+                  <a className="text-light">Link 1</a>
+                </Link>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <Link href="#">
+                  <a className="text-light">Link 2</a>
+                </Link>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <Link href="#">
+                  <a className="text-light">Link 3</a>
+                </Link>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <Link href="#">
+                  <a className="text-light">Link 4</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -66,11 +84,11 @@ const Footer = () => {
 
       {/* Copyright  */}
       <div
-        className="text-center p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+        className="p-3 text-center"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", fontSize: "0.75rem" }}
       >
-        © 2020 Copyright:
-        <a href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        Copyright © Gansbaai Academia {new Date().getFullYear()} | All rights
+        reserved
       </div>
       {/* Copyright  */}
     </footer>

@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
-        <a className="navbar-brand text-uppercase fw-bold text-danger" href="#">
-          Gansbaai Academia
-        </a>
+        <Link href="/">
+          <a className="navbar-brand text-uppercase fw-bold text-danger">
+            Gansbaai Academia
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,26 +24,26 @@ const Header = () => {
           className="collapse navbar-collapse fw-bold"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="mb-2 navbar-nav me-auto mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                About
-              </a>
+              <Link href="/about">
+                <a className="nav-link">About</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Admissions
-              </a>
+              <Link href="/admissions">
+                <a className="nav-link">Admissions</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Contact
-              </a>
+              <Link href="/contact">
+                <a className="nav-link">Contact</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Student Portal
-              </a>
+              <Link href="/student-portal">
+                <a className="nav-link">Student Portal</a>
+              </Link>
             </li>
           </ul>
         </div>
