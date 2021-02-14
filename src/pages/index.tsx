@@ -94,6 +94,44 @@ const Index = ({ file }) => {
               },
             ],
           },
+          {
+            label: "extracurricularcurricular List",
+            name: "extracurricularcurricular",
+            component: "group-list",
+            itemProps: (item) => ({
+              key: item.id,
+              label: item.name,
+            }),
+            fields: [
+              {
+                label: "Href",
+                name: "href",
+                component: "text",
+              },
+              {
+                label: "Image",
+                name: "image",
+                component: "image",
+              },
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+            ],
+          },
+          {
+            label: "News",
+            name: "news",
+            component: "group",
+            fields: [
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+            ],
+          },
         ],
       },
     ],
@@ -183,36 +221,64 @@ const Index = ({ file }) => {
           </div>
         </section>
 
-        {/* Extracurricular */}
+        {/* extracurricularcurricular */}
 
         <section className="py-5 container-fluid bg-danger">
           <div className="container py-sm-5">
-            {extracurricular.map((extra) => {
-              return (
+            {" "}
+            <div className="col-12 col-sm-4">
+              <Link href={extracurricular.sports.href}>
                 <div
-                  className="row d-flex justify-content-center align-items-center"
-                  key={extra.id}
+                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                  style={{ width: 300, height: 300 }}
                 >
-                  <Link href={extra.href}>
-                    <div
-                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                      style={{ width: 300, height: 300 }}
-                    >
-                      <Image
-                        className="rounded-circle"
-                        src={extra.image}
-                        alt="Sports"
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{extra.heading}</h2>
-                      </div>
-                    </div>
-                  </Link>
+                  <Image
+                    className="rounded-circle"
+                    src={extracurricular.sports.image}
+                    alt="Sports"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                    <h2>{extracurricular.sports.heading}</h2>
+                  </div>
                 </div>
-              );
-            })}
+              </Link>
+              <Link href={extracurricular.arts.href}>
+                <div
+                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                  style={{ width: 300, height: 300 }}
+                >
+                  <Image
+                    className="rounded-circle"
+                    src={extracurricular.arts.image}
+                    alt="Sports"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                    <h2>{extracurricular.arts.heading}</h2>
+                  </div>
+                </div>
+              </Link>
+              <Link href={extracurricular.societies.href}>
+                <div
+                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                  style={{ width: 300, height: 300 }}
+                >
+                  <Image
+                    className="rounded-circle"
+                    src={extracurricular.societies.image}
+                    alt="Sports"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                    <h2>{extracurricular.societies.heading}</h2>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -220,7 +286,7 @@ const Index = ({ file }) => {
 
         <section className="mb-5 container-fluid">
           <div className="container py-5">
-            <h2 className="py-sm-5">Latest News</h2>
+            <h2 className="py-sm-5">{news.heading}</h2>
             <div className="row">
               <div className="col-12 col-sm-4">
                 <div className="my-5 card my-sm-0">
