@@ -17,163 +17,156 @@ const Index = ({ file }) => {
     label: "Home Page",
     fields: [
       {
-        label: "Home Page",
-        name: "home.json",
+        label: "Hero",
+        name: "hero",
         component: "group",
         fields: [
           {
-            label: "Hero",
-            name: "hero",
-            component: "group",
-            fields: [
-              {
-                label: "Image",
-                name: "image",
-                component: "image",
-              },
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-              {
-                label: "Paragraph",
-                name: "para",
-                component: "textarea",
-              },
-            ],
+            label: "Image",
+            name: "image",
+            component: "image",
           },
           {
-            label: "Welcome",
-            name: "welcome",
-            component: "group",
-            fields: [
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-              {
-                label: "Paragraph 1",
-                name: "para_1",
-                component: "textarea",
-              },
-              {
-                label: "Paragraph 2",
-                name: "para_2",
-                component: "textarea",
-              },
-            ],
+            label: "Heading",
+            name: "heading",
+            component: "text",
           },
           {
-            label: "About",
-            name: "about",
-            component: "group",
-            fields: [
-              {
-                label: "Image",
-                name: "image",
-                component: "image",
-              },
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-              {
-                label: "Paragraph 1",
-                name: "para_1",
-                component: "textarea",
-              },
-              {
-                label: "Paragraph 2",
-                name: "para_2",
-                component: "textarea",
-              },
-              {
-                label: "Link Text",
-                name: "link",
-                component: "text",
-              },
-            ],
+            label: "Paragraph",
+            name: "para",
+            component: "textarea",
+          },
+        ],
+      },
+      {
+        label: "Welcome",
+        name: "welcome",
+        component: "group",
+        fields: [
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
           },
           {
-            label: "Sports",
-            name: "sports",
-            component: "group",
-            fields: [
-              {
-                label: "Href",
-                name: "href",
-                component: "text",
-              },
-              {
-                label: "Image",
-                name: "image",
-                component: "image",
-              },
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-            ],
+            label: "Paragraph 1",
+            name: "para_1",
+            component: "textarea",
           },
           {
-            label: "Arts",
-            name: "arts",
-            component: "group",
-            fields: [
-              {
-                label: "Href",
-                name: "href",
-                component: "text",
-              },
-              {
-                label: "Image",
-                name: "image",
-                component: "image",
-              },
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-            ],
+            label: "Paragraph 2",
+            name: "para_2",
+            component: "textarea",
+          },
+        ],
+      },
+      {
+        label: "About",
+        name: "about",
+        component: "group",
+        fields: [
+          {
+            label: "Image",
+            name: "image",
+            component: "image",
           },
           {
-            label: "Societies",
-            name: "societies",
-            component: "group",
-            fields: [
-              {
-                label: "Href",
-                name: "href",
-                component: "text",
-              },
-              {
-                label: "Image",
-                name: "image",
-                component: "image",
-              },
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-            ],
+            label: "Heading",
+            name: "heading",
+            component: "text",
           },
           {
-            label: "News",
-            name: "news",
-            component: "group",
-            fields: [
-              {
-                label: "Heading",
-                name: "heading",
-                component: "text",
-              },
-            ],
+            label: "Paragraph 1",
+            name: "para_1",
+            component: "textarea",
+          },
+          {
+            label: "Paragraph 2",
+            name: "para_2",
+            component: "textarea",
+          },
+          {
+            label: "Link Text",
+            name: "link",
+            component: "text",
+          },
+        ],
+      },
+      {
+        label: "Sports",
+        name: "sports",
+        component: "group",
+        fields: [
+          {
+            label: "Href",
+            name: "href",
+            component: "text",
+          },
+          {
+            label: "Image",
+            name: "image",
+            component: "image",
+          },
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
+          },
+        ],
+      },
+      {
+        label: "Arts",
+        name: "arts",
+        component: "group",
+        fields: [
+          {
+            label: "Href",
+            name: "href",
+            component: "text",
+          },
+          {
+            label: "Image",
+            name: "image",
+            component: "image",
+          },
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
+          },
+        ],
+      },
+      {
+        label: "Societies",
+        name: "societies",
+        component: "group",
+        fields: [
+          {
+            label: "Href",
+            name: "href",
+            component: "text",
+          },
+          {
+            label: "Image",
+            name: "image",
+            component: "image",
+          },
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
+          },
+        ],
+      },
+      {
+        label: "News",
+        name: "news",
+        component: "group",
+        fields: [
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
           },
         ],
       },
@@ -186,8 +179,6 @@ const Index = ({ file }) => {
 
   useGithubToolbarPlugins();
 
-  const { hero, welcome, about, sports, arts, societies, news } = data;
-
   return (
     <>
       <Head>
@@ -199,7 +190,7 @@ const Index = ({ file }) => {
         {/* Hero */}
         <section className="hero">
           <Image
-            src={hero.image}
+            src={data.hero.image}
             alt="Mountains"
             layout="responsive"
             width="1920"
@@ -208,8 +199,8 @@ const Index = ({ file }) => {
           />
           <div className="hero_overlay" />
           <div className="hero_content">
-            <h1>{hero.heading}</h1>
-            <p>{hero.para}</p>
+            <h1>{data.hero.heading}</h1>
+            <p>{data.hero.para}</p>
           </div>
         </section>
 
@@ -222,14 +213,14 @@ const Index = ({ file }) => {
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-6 px-sm-5">
-                <h2 className="py-sm-5">{welcome.heading}</h2>
-                <p>{welcome.para_1}</p>
-                <p>{welcome.para_2}</p>
+                <h2 className="py-sm-5">{data.welcome.heading}</h2>
+                <p>{data.welcome.para_1}</p>
+                <p>{data.welcome.para_2}</p>
               </div>
               <div className="col-12 col-sm-6 d-sm-flex justify-content-center align-items-end">
                 <Link href="/about">
                   <a className="fs-sm-2 fw-bold text-uppercase text-danger">
-                    {welcome.link}
+                    {data.welcome.link}
                   </a>
                 </Link>
               </div>
@@ -244,7 +235,7 @@ const Index = ({ file }) => {
             <div className="row">
               <div className="col-12 col-sm-6">
                 <Image
-                  src={about.image}
+                  src={data.about.image}
                   alt="Diverse and inclusive school"
                   layout="responsive"
                   width="480"
@@ -253,10 +244,10 @@ const Index = ({ file }) => {
                 />
               </div>
               <div className="py-5 col-12 col-sm-6 py-sm-0 px-sm-5 d-sm-flex flex-sm-column justify-content-center align-items-start">
-                <h2 className="mb-5">{about.heading}</h2>
-                <p>{about.para_1}</p>
-                <p>{about.para_2}</p>
-                <Link href="/investors">{about.link}</Link>
+                <h2 className="mb-5">{data.about.heading}</h2>
+                <p>{data.about.para_1}</p>
+                <p>{data.about.para_2}</p>
+                <Link href="/investors">{data.about.link}</Link>
               </div>
             </div>
           </div>
@@ -268,7 +259,7 @@ const Index = ({ file }) => {
           <div className="container py-sm-5">
             <div className="row">
               <div className="col-12 col-sm-4 d-sm-flex justify-content-center align-items-center w-100">
-                <Link href={sports.href}>
+                <Link href={data.sports.href}>
                   <a>
                     <div
                       className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
@@ -276,18 +267,18 @@ const Index = ({ file }) => {
                     >
                       <Image
                         className="rounded-circle"
-                        src={sports.image}
+                        src={data.sports.image}
                         alt="Sports"
                         layout="fill"
                         objectFit="cover"
                       />
                       <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{sports.heading}</h2>
+                        <h2>{data.sports.heading}</h2>
                       </div>
                     </div>
                   </a>
                 </Link>
-                <Link href={arts.href}>
+                <Link href={data.arts.href}>
                   <a>
                     <div
                       className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
@@ -295,18 +286,18 @@ const Index = ({ file }) => {
                     >
                       <Image
                         className="rounded-circle"
-                        src={arts.image}
+                        src={data.arts.image}
                         alt="Sports"
                         layout="fill"
                         objectFit="cover"
                       />
                       <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{arts.heading}</h2>
+                        <h2>{data.arts.heading}</h2>
                       </div>
                     </div>
                   </a>
                 </Link>
-                <Link href={societies.href}>
+                <Link href={data.societies.href}>
                   <a>
                     <div
                       className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
@@ -314,13 +305,13 @@ const Index = ({ file }) => {
                     >
                       <Image
                         className="rounded-circle"
-                        src={societies.image}
+                        src={data.societies.image}
                         alt="Sports"
                         layout="fill"
                         objectFit="cover"
                       />
                       <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{societies.heading}</h2>
+                        <h2>{data.societies.heading}</h2>
                       </div>
                     </div>
                   </a>
@@ -334,7 +325,7 @@ const Index = ({ file }) => {
 
         <section className="mb-5 container-fluid">
           <div className="container py-5">
-            <h2 className="py-sm-5">{news.heading}</h2>
+            <h2 className="py-sm-5">{data.news.heading}</h2>
             <div className="row">
               <div className="col-12 col-sm-4">
                 <div className="my-5 card my-sm-0">
