@@ -440,7 +440,7 @@ export const getStaticProps: GetStaticProps = async function ({
       error: null,
       preview: false,
       file: {
-        fileRelativePath: "content/home.json",
+        fileRelativePath: "content/index.json",
         data: (await import("../../content/index.json")).default,
       },
     },
