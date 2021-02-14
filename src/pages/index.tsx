@@ -15,12 +15,12 @@ const Index = ({ file }) => {
     fields: [
       {
         label: "Home Page",
-        name: "index.json",
+        name: "home.json",
         component: "group",
         fields: [
           {
             label: "Hero",
-            name: "index.json",
+            name: "hero",
             component: "group",
             fields: [
               {
@@ -118,7 +118,7 @@ const Index = ({ file }) => {
           },
           {
             label: "Arts",
-            name: "Arts",
+            name: "arts",
             component: "group",
             fields: [
               {
@@ -430,7 +430,7 @@ export const getStaticProps: GetStaticProps = async function ({
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
-      fileRelativePath: "content/index.json",
+      fileRelativePath: "content/home.json",
       parse: parseJson,
     });
   }
@@ -440,8 +440,8 @@ export const getStaticProps: GetStaticProps = async function ({
       error: null,
       preview: false,
       file: {
-        fileRelativePath: "content/index.json",
-        data: (await import("../../content/index.json")).default,
+        fileRelativePath: "content/home.json",
+        data: (await import("../../content/home.json")).default,
       },
     },
   };
