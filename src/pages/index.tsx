@@ -3,14 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 import { usePlugin } from "tinacms";
-import { useGithubJsonForm } from "react-tinacms-github";
+import {
+  useGithubJsonForm,
+  useGithubToolbarPlugins,
+} from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
 const Index = ({ file }) => {
-  const pageForm = {
+  const formOptions = {
     label: "Home Page",
     fields: [
       {
@@ -177,9 +180,11 @@ const Index = ({ file }) => {
     ],
   };
 
-  const [data, form] = useGithubJsonForm(file, pageForm);
+  const [data, form] = useGithubJsonForm(file, formOptions);
 
   usePlugin(form);
+
+  useGithubToolbarPlugins();
 
   const { hero, welcome, about, sports, arts, societies, news } = data;
 
