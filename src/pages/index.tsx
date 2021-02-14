@@ -10,79 +10,67 @@ import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
 const Index = ({ file }) => {
-  const formOptions = {
-    label: "Home Page",
-    fields: [{ name: "title", component: "text" }],
-  };
-
-  const heroGroup = {
-    label: "Home",
+  const pageForm = {
     fields: [
       {
-        label: "Hero",
-        name: "hero",
-        description: "hero",
-        component: "group",
+        label: "Home Page",
+        name: "index.json",
+        component: "group-list",
         fields: [
           {
-            label: "Image",
-            name: "image",
-            description: "image",
-            component: "image",
+            label: "Hero",
+            name: "hero",
+            component: "group",
+            fields: [
+              {
+                label: "Image",
+                name: "image",
+                component: "image",
+              },
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+              {
+                label: "Paragraph",
+                name: "para",
+                component: "textarea",
+              },
+            ],
           },
           {
-            label: "Heading",
-            name: "heading",
-            description: "heading",
-            component: "text",
-          },
-          {
-            label: "Paragraph",
-            name: "para",
-            description: "paragraph",
-            component: "text",
+            label: "Welcome",
+            name: "welcome",
+            component: "group",
+            fields: [
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+              {
+                label: "Paragraph 1",
+                name: "para_1",
+                component: "textarea",
+              },
+              {
+                label: "Paragraph 2",
+                name: "para_2",
+                component: "textarea",
+              },
+            ],
           },
         ],
       },
     ],
   };
 
-  const [data, form] = useGithubJsonForm(file, heroGroup);
+  const [data, form] = useGithubJsonForm(file, pageForm);
+
   usePlugin(form);
 
-  // const formConfig = {
-  //   id: "home-welcome",
-  //   label: "Edit Home Welcome",
-  //   fields: [
-  //     {
-  //       name: "heading",
-  //       label: "Heading",
-  //       component: "text",
-  //     },
-  //     {
-  //       name: "para_1",
-  //       label: "Para 1",
-  //       component: "textarea",
-  //     },
-  //     {
-  //       name: "para_2",
-  //       label: "Para 2",
-  //       component: "textarea",
-  //     },
-  //     {
-  //       name: "button",
-  //       label: "Button",
-  //       component: "text",
-  //     },
-  //   ],
-  //   onSubmit: async () => {
-  //     window.alert("Saved!");
-  //   },
-  // };
-
-  // const [editableData, form] = useForm(formConfig);
-
-  // usePlugin(form);
+  const { hero, welcome, about, extracurricular, news } = data;
 
   return (
     <>
@@ -96,7 +84,7 @@ const Index = ({ file }) => {
         <section className="hero">
           <Image
             // src="/images/gansbaai-academia-home-hero.jpg"
-            src={data.image}
+            src={hero.image}
             alt="Mountains"
             layout="responsive"
             width="1920"
@@ -107,8 +95,8 @@ const Index = ({ file }) => {
           <div className="hero_content">
             {/* <h1>Gansbaai Academia</h1>
             <p>Spread your wings</p> */}
-            <h1>{data.heading}</h1>
-            <p>{data.para}</p>
+            <h1>{hero.heading}</h1>
+            <p>{hero.para}</p>
           </div>
         </section>
 
@@ -117,63 +105,24 @@ const Index = ({ file }) => {
 
         {/* Welcome */}
 
-        <div className="container-fluid">
-          <div className="container">
-            <h1>{data.title}</h1>
-          </div>
-        </div>
-        {/* <section className="py-5 mt-5 container-fluid">
+        <section className="py-5 mt-5 container-fluid">
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-6 px-sm-5">
-                <h2 className="py-sm-5">{editableData.heading}</h2>
-                <p>{editableData.para_1}</p>
-                <p>{editableData.para_2}</p>
+                <h2 className="py-sm-5">{welcome.heading}</h2>
+                <p>{welcome.para_1}</p>
+                <p>{welcome.para_2}</p>
               </div>
               <div className="col-12 col-sm-6 d-sm-flex justify-content-center align-items-end">
                 <Link href="/about">
                   <a className="fs-sm-2 fw-bold text-uppercase text-danger">
-                    {editableData.button}
+                    {welcome.link}
                   </a>
                 </Link>
               </div>
             </div>
           </div>
-        </section> */}
-
-        {/* <section className="py-5 mt-5 container-fluid">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-sm-6 px-sm-5">
-                <h2 className="py-sm-5">Welcome to Academia</h2>
-                <p>
-                  Chocolate bar lemon drops danish macaroon pastry tiramisu
-                  wafer dessert gummies. Powder topping liquorice halvah sugar
-                  plum jelly-o. Chocolate cake carrot cake candy sweet gummies.
-                  Pie tiramisu carrot cake chocolate cake. Wafer brownie
-                  brownie. Apple pie pastry tart danish cake. Icing chocolate
-                  bar cotton candy carrot cake jelly beans. Lollipop soufflé
-                  sesame snaps biscuit tart ice cream cotton candy dessert pie.
-                </p>
-                <p>
-                  Cotton candy cookie tootsie roll powder brownie. Chocolate
-                  cake bear claw marzipan. Bear claw fruitcake cake lemon drops
-                  sugar plum. Lollipop apple pie oat cake tiramisu toffee
-                  brownie fruitcake marzipan. Icing tart chupa chups candy canes
-                  croissant chocolate bar tart lollipop caramels. Ice cream
-                  biscuit sugar plum lollipop biscuit toffee sesame snaps.
-                </p>
-              </div>
-              <div className="col-12 col-sm-6 d-sm-flex justify-content-center align-items-end">
-                <Link href="/about">
-                  <a className="fs-sm-2 fw-bold text-uppercase text-danger">
-                    Learn More
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section> */}
+        </section>
 
         {/* About */}
 
@@ -182,7 +131,8 @@ const Index = ({ file }) => {
             <div className="row">
               <div className="col-12 col-sm-6">
                 <Image
-                  src="/images/gansbaai-academia-home-diverse.jpg"
+                  // src="/images/gansbaai-academia-home-diverse.jpg"
+                  src={about.image}
                   alt="Diverse and inclusive school"
                   layout="responsive"
                   width="480"
@@ -191,27 +141,10 @@ const Index = ({ file }) => {
                 />
               </div>
               <div className="py-5 col-12 col-sm-6 py-sm-0 px-sm-5 d-sm-flex flex-sm-column justify-content-center align-items-start">
-                <h2 className="mb-5">Diverse & Inclusive Culture</h2>
-                <p>
-                  Biscuit dragée jelly-o macaroon bear claw powder pudding lemon
-                  drops. Icing jelly beans cheesecake powder tiramisu dragée
-                  pastry danish. Dragée jelly-o bear claw cotton candy lemon
-                  drops carrot cake. Carrot cake pie candy canes sweet roll
-                  jelly-o jelly beans icing halvah. Donut candy candy. Jelly-o
-                  wafer pie sugar plum tart cheesecake toffee candy chocolate
-                  cake. Sugar plum icing wafer sesame snaps dessert muffin
-                  dragée biscuit biscuit.
-                </p>
-                <p>
-                  Pastry toffee cake jelly beans powder marshmallow. Chupa chups
-                  pudding sesame snaps cookie cupcake. Toffee marshmallow sweet
-                  roll pie jujubes sweet pie fruitcake. Jelly oat cake muffin
-                  bear claw pastry liquorice dessert tart tart. Cookie dessert
-                  sesame snaps. Tiramisu sesame snaps chocolate chupa chups.
-                  Macaroon jelly beans chupa chups sugar plum chupa chups danish
-                  tiramisu.
-                </p>
-                <Link href="/investors">Learn More</Link>
+                <h2 className="mb-5">{about.heading}</h2>
+                <p>{about.para_1}</p>
+                <p>{about.para_2}</p>
+                <Link href="/investors">{about.link}</Link>
               </div>
             </div>
           </div>
@@ -229,13 +162,14 @@ const Index = ({ file }) => {
                 >
                   <Image
                     className="rounded-circle"
-                    src="/images/gansbaai-academia-home-sports.jpg"
+                    // src="/images/gansbaai-academia-home-sports.jpg"
+                    src={extracurricular.circle_1.image}
                     alt="Sports"
                     layout="fill"
                     objectFit="cover"
                   />
                   <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>Sports</h2>
+                    <h2>{extracurricular.circle_1.heading}</h2>
                   </div>
                 </div>
               </Link>
@@ -246,13 +180,14 @@ const Index = ({ file }) => {
                 >
                   <Image
                     className="rounded-circle"
-                    src="/images/gansbaai-academia-home-arts.jpg"
+                    // src="/images/gansbaai-academia-home-arts.jpg"
+                    src={extracurricular.circle_2.image}
                     alt="Arts"
                     layout="fill"
                     objectFit="cover"
                   />
                   <div className="bottom-0 mb-5 position-absolute start-0 text-light bg-dark d-flex justify-content-center align-items-center w-100">
-                    <h2>Arts</h2>
+                    <h2>{extracurricular.circle_2.heading}</h2>
                   </div>
                 </div>
               </Link>
@@ -263,13 +198,14 @@ const Index = ({ file }) => {
                 >
                   <Image
                     className="rounded-circle"
-                    src="/images/gansbaai-academia-home-societies.jpg"
+                    // src="/images/gansbaai-academia-home-societies.jpg"
+                    src={extracurricular.circle_3.image}
                     alt="Societies"
                     layout="fill"
                     objectFit="cover"
                   />
                   <div className="bottom-0 mb-5 position-absolute start-0 text-light bg-dark d-flex justify-content-center align-items-center w-100">
-                    <h2>Societies</h2>
+                    <h2>{extracurricular.circle_3.heading}</h2>
                   </div>
                 </div>
               </Link>

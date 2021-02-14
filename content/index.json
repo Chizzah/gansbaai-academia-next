@@ -1,37 +1,41 @@
 {
-  "hero": {
-    "image": "/images/gansbaai-academia-home-hero.jpg",
-    "heading": "Gansbaai Academia",
-    "para": "Spread your wings"
-  },
-  "welcome": {
-    "heading": "Welcome to Gansbaai Academia",
-    "para_1": "Chocolate bar lemon drops danish macaroon pastry tiramisu wafer dessert gummies. Powder topping liquorice halvah sugar plum jelly-o. Chocolate cake carrot cake candy sweet gummies. Pie tiramisu carrot cake chocolate cake. Wafer brownie. Apple pie pastry tart danish cake. Icing chocolatebar cotton candy carrot cake jelly beans. Lollipop soufflé brownie sesame snaps biscuit tart ice cream cotton candy dessert pie.",
-    "para_2": "Cotton candy cookie tootsie roll powder brownie. Chocolate cake bear claw marzipan. Bear claw fruitcake cake lemon drops sugar plum. Lollipop apple pie oat cake tiramisu toffee brownie fruitcake marzipan. Icing tart chupa chups candy canes croissant chocolate bar tart lollipop caramels. Ice cream biscuit sugar plum lollipop biscuit toffee sesame snaps.",
-    "link": "Learn More"
-  },
-  "about": {
-    "image": "/images/gansbaai-academia-home-diverse.jpg",
-    "heading": "Diverse & Inclusive Culture",
-    "para_1": "Biscuit dragée jelly-o macaroon bear claw powder pudding lemon drops. Icing jelly beans cheesecake powder tiramisu dragée pastry danish. Dragée jelly-o bear claw cotton candy lemondrops carrot cake. Carrot cake pie candy canes sweet roll jelly-o jelly beans icing halvah. Donut candy candy. Jelly-o wafer pie sugar plum tart cheesecake toffee candy chocolate cake. Sugar plum icing wafer sesame snaps dessert muffin dragée biscuit biscuit.",
-    "para_2": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
-    "link": "Learn More"
-  },
-  "extracurricular": {
-    "circle_1": {
-      "heading": "Sports",
-      "image": "/images/gansbaai-academia-home-sports.jpg"
-    },
-    "circle_2": {
-      "heading": "Arts",
-      "image": "/images/gansbaai-academia-home-arts.jpg"
-    },
-    "circle_3": {
-      "heading": "Societies",
-      "image": "/images/gansbaai-academia-home-societies.jpg"
+  "home": [
+    {
+      "hero": {
+        "image": "/images/gansbaai-academia-home-hero.jpg",
+        "heading": "Gansbaai Academia",
+        "para": "Spread your wings"
+      },
+      "welcome": {
+        "heading": "Welcome to Gansbaai Academia",
+        "para_1": "Chocolate bar lemon drops danish macaroon pastry tiramisu wafer dessert gummies. Powder topping liquorice halvah sugar plum jelly-o. Chocolate cake carrot cake candy sweet gummies. Pie tiramisu carrot cake chocolate cake. Wafer brownie. Apple pie pastry tart danish cake. Icing chocolatebar cotton candy carrot cake jelly beans. Lollipop soufflé brownie sesame snaps biscuit tart ice cream cotton candy dessert pie.",
+        "para_2": "Cotton candy cookie tootsie roll powder brownie. Chocolate cake bear claw marzipan. Bear claw fruitcake cake lemon drops sugar plum. Lollipop apple pie oat cake tiramisu toffee brownie fruitcake marzipan. Icing tart chupa chups candy canes croissant chocolate bar tart lollipop caramels. Ice cream biscuit sugar plum lollipop biscuit toffee sesame snaps.",
+        "link": "Learn More"
+      },
+      "about": {
+        "image": "/images/gansbaai-academia-home-diverse.jpg",
+        "heading": "Diverse & Inclusive Culture",
+        "para_1": "Biscuit dragée jelly-o macaroon bear claw powder pudding lemon drops. Icing jelly beans cheesecake powder tiramisu dragée pastry danish. Dragée jelly-o bear claw cotton candy lemondrops carrot cake. Carrot cake pie candy canes sweet roll jelly-o jelly beans icing halvah. Donut candy candy. Jelly-o wafer pie sugar plum tart cheesecake toffee candy chocolate cake. Sugar plum icing wafer sesame snaps dessert muffin dragée biscuit biscuit.",
+        "para_2": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
+        "link": "Learn More"
+      },
+      "extracurricular": {
+        "circle_1": {
+          "heading": "Sports",
+          "image": "/images/gansbaai-academia-home-sports.jpg"
+        },
+        "circle_2": {
+          "heading": "Arts",
+          "image": "/images/gansbaai-academia-home-arts.jpg"
+        },
+        "circle_3": {
+          "heading": "Societies",
+          "image": "/images/gansbaai-academia-home-societies.jpg"
+        }
+      },
+      "news": {
+        "heading": "Latest News"
+      }
     }
-  },
-  "news": {
-    "heading": "Latest News"
-  }
+  ]
 }
