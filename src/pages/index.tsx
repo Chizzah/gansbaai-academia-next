@@ -20,7 +20,7 @@ const Index = ({ file }) => {
         fields: [
           {
             label: "Hero",
-            name: "hero",
+            name: "index.json",
             component: "group",
             fields: [
               {
@@ -194,7 +194,6 @@ const Index = ({ file }) => {
         {/* Hero */}
         <section className="hero">
           <Image
-            // src="/images/gansbaai-academia-home-hero.jpg"
             src={hero.image}
             alt="Mountains"
             layout="responsive"
@@ -204,8 +203,6 @@ const Index = ({ file }) => {
           />
           <div className="hero_overlay" />
           <div className="hero_content">
-            {/* <h1>Gansbaai Academia</h1>
-            <p>Spread your wings</p> */}
             <h1>{hero.heading}</h1>
             <p>{hero.para}</p>
           </div>
@@ -242,7 +239,6 @@ const Index = ({ file }) => {
             <div className="row">
               <div className="col-12 col-sm-6">
                 <Image
-                  // src="/images/gansbaai-academia-home-diverse.jpg"
                   src={about.image}
                   alt="Diverse and inclusive school"
                   layout="responsive"
@@ -261,63 +257,70 @@ const Index = ({ file }) => {
           </div>
         </section>
 
-        {/* extracurricularcurricular */}
+        {/* Extracurricular */}
 
         <section className="py-5 container-fluid bg-danger">
           <div className="container py-sm-5">
-            {" "}
-            <div className="col-12 col-sm-4">
-              <Link href={sports.href}>
-                <div
-                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                  style={{ width: 300, height: 300 }}
-                >
-                  <Image
-                    className="rounded-circle"
-                    src={sports.image}
-                    alt="Sports"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{sports.heading}</h2>
-                  </div>
-                </div>
-              </Link>
-              <Link href={arts.href}>
-                <div
-                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                  style={{ width: 300, height: 300 }}
-                >
-                  <Image
-                    className="rounded-circle"
-                    src={arts.image}
-                    alt="Sports"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{arts.heading}</h2>
-                  </div>
-                </div>
-              </Link>
-              <Link href={societies.href}>
-                <div
-                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                  style={{ width: 300, height: 300 }}
-                >
-                  <Image
-                    className="rounded-circle"
-                    src={societies.image}
-                    alt="Sports"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{societies.heading}</h2>
-                  </div>
-                </div>
-              </Link>
+            <div className="row">
+              <div className="col-12 col-sm-4 d-sm-flex justify-content-center align-items-center w-100">
+                <Link href={sports.href}>
+                  <a>
+                    <div
+                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                      style={{ width: 300, height: 300 }}
+                    >
+                      <Image
+                        className="rounded-circle"
+                        src={sports.image}
+                        alt="Sports"
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                        <h2>{sports.heading}</h2>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+                <Link href={arts.href}>
+                  <a>
+                    <div
+                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                      style={{ width: 300, height: 300 }}
+                    >
+                      <Image
+                        className="rounded-circle"
+                        src={arts.image}
+                        alt="Sports"
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                        <h2>{arts.heading}</h2>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+                <Link href={societies.href}>
+                  <a>
+                    <div
+                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                      style={{ width: 300, height: 300 }}
+                    >
+                      <Image
+                        className="rounded-circle"
+                        src={societies.image}
+                        alt="Sports"
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                        <h2>{societies.heading}</h2>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
