@@ -95,13 +95,53 @@ const Index = ({ file }) => {
             ],
           },
           {
-            label: "extracurricularcurricular List",
-            name: "extracurricularcurricular",
-            component: "group-list",
-            itemProps: (item) => ({
-              key: item.id,
-              label: item.name,
-            }),
+            label: "Sports",
+            name: "sports",
+            component: "group",
+            fields: [
+              {
+                label: "Href",
+                name: "href",
+                component: "text",
+              },
+              {
+                label: "Image",
+                name: "image",
+                component: "image",
+              },
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+            ],
+          },
+          {
+            label: "Arts",
+            name: "Arts",
+            component: "group",
+            fields: [
+              {
+                label: "Href",
+                name: "href",
+                component: "text",
+              },
+              {
+                label: "Image",
+                name: "image",
+                component: "image",
+              },
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+            ],
+          },
+          {
+            label: "Societies",
+            name: "societies",
+            component: "group",
             fields: [
               {
                 label: "Href",
@@ -141,7 +181,7 @@ const Index = ({ file }) => {
 
   usePlugin(form);
 
-  const { hero, welcome, about, extracurricular, news } = data;
+  const { hero, welcome, about, sports, arts, societies, news } = data;
 
   return (
     <>
@@ -227,54 +267,54 @@ const Index = ({ file }) => {
           <div className="container py-sm-5">
             {" "}
             <div className="col-12 col-sm-4">
-              <Link href={extracurricular.sports.href}>
+              <Link href={sports.href}>
                 <div
                   className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
                   style={{ width: 300, height: 300 }}
                 >
                   <Image
                     className="rounded-circle"
-                    src={extracurricular.sports.image}
+                    src={sports.image}
                     alt="Sports"
                     layout="fill"
                     objectFit="cover"
                   />
                   <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{extracurricular.sports.heading}</h2>
+                    <h2>{sports.heading}</h2>
                   </div>
                 </div>
               </Link>
-              <Link href={extracurricular.arts.href}>
+              <Link href={arts.href}>
                 <div
                   className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
                   style={{ width: 300, height: 300 }}
                 >
                   <Image
                     className="rounded-circle"
-                    src={extracurricular.arts.image}
+                    src={arts.image}
                     alt="Sports"
                     layout="fill"
                     objectFit="cover"
                   />
                   <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{extracurricular.arts.heading}</h2>
+                    <h2>{arts.heading}</h2>
                   </div>
                 </div>
               </Link>
-              <Link href={extracurricular.societies.href}>
+              <Link href={societies.href}>
                 <div
                   className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
                   style={{ width: 300, height: 300 }}
                 >
                   <Image
                     className="rounded-circle"
-                    src={extracurricular.societies.image}
+                    src={societies.image}
                     alt="Sports"
                     layout="fill"
                     objectFit="cover"
                   />
                   <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{extracurricular.societies.heading}</h2>
+                    <h2>{societies.heading}</h2>
                   </div>
                 </div>
               </Link>
