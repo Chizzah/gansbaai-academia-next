@@ -17,20 +17,23 @@
     "para_2": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
     "link": "Learn More"
   },
-  "extracurricular": {
-    "circle_1": {
+  "extracurricular": [
+    {
+      "id": "sports",
       "heading": "Sports",
       "image": "/images/gansbaai-academia-home-sports.jpg"
     },
-    "circle_2": {
+    {
+      "id": "arts",
       "heading": "Arts",
       "image": "/images/gansbaai-academia-home-arts.jpg"
     },
-    "circle_3": {
+    {
+      "id": "societies",
       "heading": "Societies",
       "image": "/images/gansbaai-academia-home-societies.jpg"
     }
-  },
+  ],
   "news": {
     "heading": "Latest News"
   }

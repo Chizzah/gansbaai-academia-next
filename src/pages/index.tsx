@@ -11,6 +11,7 @@ import Sponsors from "../components/Sponsors/Sponsors";
 
 const Index = ({ file }) => {
   const pageForm = {
+    label: "Home Page",
     fields: [
       {
         label: "Home Page",
@@ -58,6 +59,38 @@ const Index = ({ file }) => {
                 label: "Paragraph 2",
                 name: "para_2",
                 component: "textarea",
+              },
+            ],
+          },
+          {
+            label: "About",
+            name: "about",
+            component: "group",
+            fields: [
+              {
+                label: "Image",
+                name: "image",
+                component: "image",
+              },
+              {
+                label: "Heading",
+                name: "heading",
+                component: "text",
+              },
+              {
+                label: "Paragraph 1",
+                name: "para_1",
+                component: "textarea",
+              },
+              {
+                label: "Paragraph 2",
+                name: "para_2",
+                component: "textarea",
+              },
+              {
+                label: "Link Text",
+                name: "link",
+                component: "text",
               },
             ],
           },
