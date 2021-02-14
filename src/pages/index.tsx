@@ -15,7 +15,7 @@ const Index = ({ file }) => {
       {
         label: "Home Page",
         name: "index.json",
-        component: "group-list",
+        component: "group",
         fields: [
           {
             label: "Hero",
