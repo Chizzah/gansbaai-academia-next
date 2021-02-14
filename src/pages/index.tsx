@@ -187,62 +187,32 @@ const Index = ({ file }) => {
 
         <section className="py-5 container-fluid bg-danger">
           <div className="container py-sm-5">
-            <div className="row d-flex justify-content-center align-items-center">
-              <Link href="/sports">
+            {extracurricular.map((extra) => {
+              return (
                 <div
-                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                  style={{ width: 300, height: 300 }}
+                  className="row d-flex justify-content-center align-items-center"
+                  key={extra.id}
                 >
-                  <Image
-                    className="rounded-circle"
-                    // src="/images/gansbaai-academia-home-sports.jpg"
-                    src={extracurricular.circle_1.image}
-                    alt="Sports"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                    <h2>{extracurricular.circle_1.heading}</h2>
-                  </div>
+                  <Link href={extra.href}>
+                    <div
+                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                      style={{ width: 300, height: 300 }}
+                    >
+                      <Image
+                        className="rounded-circle"
+                        src={extra.image}
+                        alt="Sports"
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                        <h2>{extra.heading}</h2>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
-              <Link href="/arts">
-                <div
-                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                  style={{ width: 300, height: 300 }}
-                >
-                  <Image
-                    className="rounded-circle"
-                    // src="/images/gansbaai-academia-home-arts.jpg"
-                    src={extracurricular.circle_2.image}
-                    alt="Arts"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="bottom-0 mb-5 position-absolute start-0 text-light bg-dark d-flex justify-content-center align-items-center w-100">
-                    <h2>{extracurricular.circle_2.heading}</h2>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/societies">
-                <div
-                  className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                  style={{ width: 300, height: 300 }}
-                >
-                  <Image
-                    className="rounded-circle"
-                    // src="/images/gansbaai-academia-home-societies.jpg"
-                    src={extracurricular.circle_3.image}
-                    alt="Societies"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="bottom-0 mb-5 position-absolute start-0 text-light bg-dark d-flex justify-content-center align-items-center w-100">
-                    <h2>{extracurricular.circle_3.heading}</h2>
-                  </div>
-                </div>
-              </Link>
-            </div>
+              );
+            })}
           </div>
         </section>
 
