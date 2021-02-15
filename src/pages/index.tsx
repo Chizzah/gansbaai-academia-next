@@ -8,11 +8,20 @@ import {
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
+import Container from "../components/container";
+import MoreStories from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
+import { getAllPosts } from "../lib/api";
+import { CMS_NAME } from "../lib/constants";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-const Index = ({ file }) => {
+const Index = ({ file, allPosts }) => {
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
+
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -412,6 +421,23 @@ const Index = ({ file }) => {
           </div>
         </section>
 
+        {/* All Posts */}
+
+        <Container>
+          <Intro />
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
+              date={heroPost.date}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Container>
+
         {/* Sponsors */}
         <Sponsors />
       </Layout>
@@ -430,6 +456,16 @@ export const getStaticProps: GetStaticProps = async function ({
       parse: parseJson,
     });
   }
+
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
+
   return {
     props: {
       sourceProvider: null,
@@ -439,6 +475,7 @@ export const getStaticProps: GetStaticProps = async function ({
         fileRelativePath: "content/home.json",
         data: (await import("../../content/home.json")).default,
       },
+      allPosts,
     },
   };
 };

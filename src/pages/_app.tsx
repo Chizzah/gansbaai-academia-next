@@ -1,6 +1,7 @@
 import { TinaCMS, TinaProvider } from "tinacms";
 import { GithubClient, TinacmsGithubProvider } from "react-tinacms-github";
 import { NextGithubMediaStore } from "next-tinacms-github";
+import { MarkdownFieldPlugin } from "react-tinacms-editor";
 
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +26,7 @@ const App = ({ Component, pageProps }) => {
     apis: {
       github,
     },
+    plugins: [MarkdownFieldPlugin],
     media: mediaStore,
     sidebar: pageProps.preview,
     toolbar: pageProps.preview,
