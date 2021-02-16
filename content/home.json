@@ -32,6 +32,23 @@
     "image": "/images/gansbaai-academia-home-societies.jpg",
     "heading": "Societies"
   },
+  "extracurricular": [
+    {
+      "href": "/sports",
+      "image": "/images/gansbaai-academia-home-sports.jpg",
+      "heading": "Sports"
+    },
+    {
+      "href": "/arts",
+      "image": "/images/gansbaai-academia-home-arts.jpg",
+      "heading": "Arts"
+    },
+    {
+      "href": "/societies",
+      "image": "/images/gansbaai-academia-home-societies.jpg",
+      "heading": "Societies"
+    }
+  ],
   "news": {
     "heading": "Latest News"
   }
