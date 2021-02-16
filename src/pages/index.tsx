@@ -12,7 +12,15 @@ import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-const Index = ({ file }) => {
+import MoreStories from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
+import { getAllPosts } from "../lib/api";
+
+const Index = ({ file, allPosts }) => {
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
+
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -412,6 +420,21 @@ const Index = ({ file }) => {
           </div>
         </section>
 
+        {/* Blogroll */}
+        <section>
+          <Intro />
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </section>
+
         {/* Sponsors */}
         <Sponsors />
       </Layout>
@@ -423,10 +446,26 @@ export const getStaticProps: GetStaticProps = async function ({
   preview,
   previewData,
 }) {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
       fileRelativePath: "content/home.json",
+      parse: parseJson,
+    });
+  }
+
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "_posts/*.md",
       parse: parseJson,
     });
   }
@@ -440,6 +479,7 @@ export const getStaticProps: GetStaticProps = async function ({
         fileRelativePath: "content/home.json",
         data: (await import("../../content/home.json")).default,
       },
+      allPosts,
     },
   };
 };
