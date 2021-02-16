@@ -93,72 +93,6 @@ const Index = ({ file }) => {
         ],
       },
       {
-        label: "Sports",
-        name: "sports",
-        component: "group",
-        fields: [
-          {
-            label: "Href",
-            name: "href",
-            component: "text",
-          },
-          {
-            label: "Image",
-            name: "image",
-            component: "image",
-          },
-          {
-            label: "Heading",
-            name: "heading",
-            component: "text",
-          },
-        ],
-      },
-      {
-        label: "Arts",
-        name: "arts",
-        component: "group",
-        fields: [
-          {
-            label: "Href",
-            name: "href",
-            component: "text",
-          },
-          {
-            label: "Image",
-            name: "image",
-            component: "image",
-          },
-          {
-            label: "Heading",
-            name: "heading",
-            component: "text",
-          },
-        ],
-      },
-      {
-        label: "Societies",
-        name: "societies",
-        component: "group",
-        fields: [
-          {
-            label: "Href",
-            name: "href",
-            component: "text",
-          },
-          {
-            label: "Image",
-            name: "image",
-            component: "image",
-          },
-          {
-            label: "Heading",
-            name: "heading",
-            component: "text",
-          },
-        ],
-      },
-      {
         label: "News",
         name: "news",
         component: "group",
@@ -174,14 +108,6 @@ const Index = ({ file }) => {
         label: "Extracurricular",
         name: "extracurricular",
         component: "group-list",
-        itemProps: (item) => ({
-          key: item.id,
-          label: item.name,
-        }),
-        defaultItem: () => ({
-          name: "New Extracurricular",
-          id: Math.random().toString(36).substr(2, 9),
-        }),
         fields: [
           {
             label: "Href",
@@ -205,6 +131,8 @@ const Index = ({ file }) => {
 
   const [data, form] = useGithubJsonForm(file, formOptions);
 
+  const { hero, welcome, about, extracurricular, news } = data;
+
   usePlugin(form);
 
   useGithubToolbarPlugins();
@@ -220,7 +148,7 @@ const Index = ({ file }) => {
         {/* Hero */}
         <section className="hero">
           <Image
-            src={data.hero.image}
+            src={hero.image}
             alt="Mountains"
             layout="responsive"
             width="1920"
@@ -229,8 +157,8 @@ const Index = ({ file }) => {
           />
           <div className="hero_overlay" />
           <div className="hero_content">
-            <h1>{data.hero.heading}</h1>
-            <p>{data.hero.para}</p>
+            <h1>{hero.heading}</h1>
+            <p>{hero.para}</p>
           </div>
         </section>
 
@@ -243,14 +171,14 @@ const Index = ({ file }) => {
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-6 px-sm-5">
-                <h2 className="py-sm-5">{data.welcome.heading}</h2>
-                <p>{data.welcome.para_1}</p>
-                <p>{data.welcome.para_2}</p>
+                <h2 className="py-sm-5">{welcome.heading}</h2>
+                <p>{welcome.para_1}</p>
+                <p>{welcome.para_2}</p>
               </div>
               <div className="col-12 col-sm-6 d-sm-flex justify-content-center align-items-end">
                 <Link href="/about">
                   <a className="fs-sm-2 fw-bold text-uppercase text-danger">
-                    {data.welcome.link}
+                    {welcome.link}
                   </a>
                 </Link>
               </div>
@@ -265,7 +193,7 @@ const Index = ({ file }) => {
             <div className="row">
               <div className="col-12 col-sm-6">
                 <Image
-                  src={data.about.image}
+                  src={about.image}
                   alt="Diverse and inclusive school"
                   layout="responsive"
                   width="480"
@@ -274,79 +202,47 @@ const Index = ({ file }) => {
                 />
               </div>
               <div className="py-5 col-12 col-sm-6 py-sm-0 px-sm-5 d-sm-flex flex-sm-column justify-content-center align-items-start">
-                <h2 className="mb-5">{data.about.heading}</h2>
-                <p>{data.about.para_1}</p>
-                <p>{data.about.para_2}</p>
-                <Link href="/investors">{data.about.link}</Link>
+                <h2 className="mb-5">{about.heading}</h2>
+                <p>{about.para_1}</p>
+                <p>{about.para_2}</p>
+                <Link href="/investors">{about.link}</Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* Extracurricular */}
-
         <section className="py-5 container-fluid bg-danger">
           <div className="container py-sm-5">
             <div className="row">
-              <div className="col-12 col-sm-4 d-sm-flex justify-content-center align-items-center w-100">
-                <Link href={data.sports.href}>
-                  <a>
-                    <div
-                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                      style={{ width: 300, height: 300 }}
-                    >
-                      <Image
-                        className="rounded-circle"
-                        src={data.sports.image}
-                        alt="Sports"
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{data.sports.heading}</h2>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-                <Link href={data.arts.href}>
-                  <a>
-                    <div
-                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                      style={{ width: 300, height: 300 }}
-                    >
-                      <Image
-                        className="rounded-circle"
-                        src={data.arts.image}
-                        alt="Sports"
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{data.arts.heading}</h2>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-                <Link href={data.societies.href}>
-                  <a>
-                    <div
-                      className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                      style={{ width: 300, height: 300 }}
-                    >
-                      <Image
-                        className="rounded-circle"
-                        src={data.societies.image}
-                        alt="Sports"
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                      <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                        <h2>{data.societies.heading}</h2>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              </div>
+              {extracurricular.map((extra) => {
+                return (
+                  <div
+                    className="col-12 col-sm-4 d-sm-flex justify-content-center align-items-center w-100"
+                    key={extra.id}
+                  >
+                    <Link href={extra.href}>
+                      <a>
+                        <div
+                          className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                          style={{ width: 300, height: 300 }}
+                        >
+                          <Image
+                            className="rounded-circle"
+                            src={extra.image}
+                            alt="Sports"
+                            layout="fill"
+                            objectFit="cover"
+                          />
+                          <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
+                            <h2>{extra.heading}</h2>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -355,7 +251,7 @@ const Index = ({ file }) => {
 
         <section className="mb-5 container-fluid">
           <div className="container py-5">
-            <h2 className="py-sm-5">{data.news.heading}</h2>
+            <h2 className="py-sm-5">{news.heading}</h2>
             <div className="row">
               <div className="col-12 col-sm-4">
                 <div className="my-5 card my-sm-0">
@@ -438,43 +334,6 @@ const Index = ({ file }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Trying Something */}
-
-        <section className="container-fluid">
-          <div className="container py-sm-5">
-            <div className="row">
-              {data.extracurricular.map((extra) => {
-                return (
-                  <div
-                    className="col-12 col-sm-4 d-sm-flex justify-content-center align-items-center w-100"
-                    key={extra.id}
-                  >
-                    <Link href={extra.href}>
-                      <a>
-                        <div
-                          className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
-                          style={{ width: 300, height: 300 }}
-                        >
-                          <Image
-                            className="rounded-circle"
-                            src={extra.image}
-                            alt="Sports"
-                            layout="fill"
-                            objectFit="cover"
-                          />
-                          <div className="bottom-0 mb-5 bg-dark position-absolute start-0 text-light d-flex justify-content-center align-items-center w-100">
-                            <h2>{extra.heading}</h2>
-                          </div>
-                        </div>
-                      </a>
-                    </Link>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </section>
