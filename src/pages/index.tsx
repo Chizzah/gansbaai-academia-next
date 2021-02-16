@@ -217,10 +217,7 @@ const Index = ({ file }) => {
             <div className="row">
               {extracurricular.map((extra) => {
                 return (
-                  <div
-                    className="col-12 col-sm-4 d-sm-flex justify-content-center align-items-center w-100"
-                    key={extra.id}
-                  >
+                  <div className="col-12 col-sm-4" key={extra.id}>
                     <Link href={extra.href}>
                       <a>
                         <div
