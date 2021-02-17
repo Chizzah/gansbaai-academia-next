@@ -8,11 +8,43 @@ import {
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
+import { client } from "../utils/contentfulClient";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-const Index = ({ file }) => {
+export const getStaticProps: GetStaticProps = async function ({
+  preview,
+  previewData,
+}) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "content/home.json",
+      parse: parseJson,
+    });
+  }
+
+  const data = await client.getEntries({
+    content_type: "news",
+  });
+
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: "content/home.json",
+        data: (await import("../../content/home.json")).default,
+      },
+      contentfulNews: data.items,
+    },
+  };
+};
+
+const Index = ({ file, contentfulNews }) => {
+  console.log(contentfulNews);
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -21,6 +53,11 @@ const Index = ({ file }) => {
         name: "hero",
         component: "group",
         fields: [
+          {
+            label: "Paragraph 1",
+            name: "para_1",
+            component: "text",
+          },
           {
             label: "Image",
             name: "image",
@@ -32,8 +69,8 @@ const Index = ({ file }) => {
             component: "text",
           },
           {
-            label: "Paragraph",
-            name: "para",
+            label: "Paragraph 2",
+            name: "para_2",
             component: "textarea",
           },
         ],
@@ -348,31 +385,6 @@ const Index = ({ file }) => {
       </Layout>
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps = async function ({
-  preview,
-  previewData,
-}) {
-  if (preview) {
-    return getGithubPreviewProps({
-      ...previewData,
-      fileRelativePath: "content/home.json",
-      parse: parseJson,
-    });
-  }
-
-  return {
-    props: {
-      sourceProvider: null,
-      error: null,
-      preview: false,
-      file: {
-        fileRelativePath: "content/home.json",
-        data: (await import("../../content/home.json")).default,
-      },
-    },
-  };
 };
 
 export default Index;
