@@ -146,20 +146,20 @@ const Index = ({ file }) => {
 
       <Layout>
         {/* Hero */}
-        <section className="hero">
+        <section className="hero position-relative w-100 h-100">
           <Image
             src={hero.image}
             alt="Mountains"
             layout="responsive"
             width="1920"
-            height="720"
+            height="1080"
             objectFit="cover"
           />
-          <div className="hero_overlay" />
-          <div className="hero_content w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-            <p>{hero.para_1}</p>
-            <h1>{hero.heading}</h1>
-            <p>{hero.para_2}</p>
+          <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
+          <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+            <p className="mb-0 fw-bolder text-warning">{hero.para_1}</p>
+            <h1 className="fs-2 text-uppercase fs-lg-1">{hero.heading}</h1>
+            <p className="px-3 px-md-0">{hero.para_2}</p>
           </div>
         </section>
 
@@ -171,14 +171,14 @@ const Index = ({ file }) => {
         <section className="py-5 mt-5 container-fluid">
           <div className="container">
             <div className="row">
-              <div className="col-12 col-sm-6 px-sm-5">
+              <div className="col-12 col-lg-6 px-lg-5">
                 <h2 className="mb-sm-3">{welcome.heading}</h2>
                 <p>{welcome.para_1}</p>
                 <p>{welcome.para_2}</p>
               </div>
-              <div className="col-12 col-sm-6 d-sm-flex justify-content-center align-items-end">
+              <div className="col-12 col-lg-6 d-lg-flex justify-content-center align-items-end">
                 <Link href="/about">
-                  <a className="fs-sm-2 fw-bold text-uppercase text-danger">
+                  <a className="fs-lg-2 fw-bold text-uppercase text-danger">
                     {welcome.link}
                   </a>
                 </Link>
@@ -192,7 +192,7 @@ const Index = ({ file }) => {
         <section className="py-5 container-fluid bg-light">
           <div className="container">
             <div className="row">
-              <div className="col-12 col-sm-6">
+              <div className="col-12 col-lg-6">
                 <Image
                   src={about.image}
                   alt="Diverse and inclusive school"
@@ -202,12 +202,12 @@ const Index = ({ file }) => {
                   objectFit="cover"
                 />
               </div>
-              <div className="py-5 col-12 col-sm-6 py-sm-0 px-sm-5 d-sm-flex flex-sm-column justify-content-center align-items-start">
+              <div className="py-5 col-12 col-lg-6 py-lg-0 px-lg-5 d-lg-flex flex-lg-column justify-content-center align-items-start">
                 <h2 className="mb-sm-3">{about.heading}</h2>
                 <p>{about.para_1}</p>
                 <p>{about.para_2}</p>
                 <Link href="/investors">
-                  <a className="fs-sm-2 fw-bold text-uppercase text-danger mt-sm-2">
+                  <a className="fs-lg-2 fw-bold text-uppercase text-danger mt-lg-2">
                     {about.link}
                   </a>
                 </Link>
@@ -218,15 +218,18 @@ const Index = ({ file }) => {
 
         {/* Extracurricular */}
         <section className="py-5 container-fluid bg-danger">
-          <div className="container py-sm-5">
+          <div className="container py-lg-5">
             <div className="row">
               {extracurricular.map((extra) => {
                 return (
-                  <div className="col-12 col-sm-4" key={extra.id}>
+                  <div
+                    className="col d-flex justify-content-center align-items-center"
+                    key={extra.id}
+                  >
                     <Link href={extra.href}>
                       <a>
                         <div
-                          className="my-5 overflow-hidden col-12 col-sm-4 position-relative rounded-circle my-sm-0 mx-sm-5"
+                          className="my-5 overflow-hidden position-relative rounded-circle my-lg-0 mx-lg-5"
                           style={{ width: 300, height: 300 }}
                         >
                           <Image
@@ -253,10 +256,10 @@ const Index = ({ file }) => {
 
         <section className="mb-5 container-fluid">
           <div className="container py-5">
-            <h2 className="py-sm-5">{news.heading}</h2>
+            <h2 className="py-lg-5">{news.heading}</h2>
             <div className="row">
-              <div className="col-12 col-sm-4">
-                <div className="my-5 card my-sm-0">
+              <div className="col-12 col-lg-4">
+                <div className="my-5 card my-lg-0">
                   <Image
                     className="card-img-top"
                     src="/images/gansbaai-academia-news-post-1.jpg"
@@ -282,8 +285,8 @@ const Index = ({ file }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-4">
-                <div className="my-5 card my-sm-0">
+              <div className="col-12 col-lg-4">
+                <div className="my-5 card my-lg-0">
                   <Image
                     className="card-img-top"
                     src="/images/gansbaai-academia-news-post-2.jpg"
@@ -309,8 +312,8 @@ const Index = ({ file }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-4">
-                <div className="my-5 card my-sm-0">
+              <div className="col-12 col-lg-4">
+                <div className="my-5 card my-lg-0">
                   <Image
                     className="card-img-top"
                     src="/images/gansbaai-academia-news-post-3.jpg"
