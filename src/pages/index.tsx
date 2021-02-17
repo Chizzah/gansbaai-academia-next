@@ -156,9 +156,10 @@ const Index = ({ file }) => {
             objectFit="cover"
           />
           <div className="hero_overlay" />
-          <div className="hero_content">
+          <div className="hero_content w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+            <p>{hero.para_1}</p>
             <h1>{hero.heading}</h1>
-            <p>{hero.para}</p>
+            <p>{hero.para_2}</p>
           </div>
         </section>
 
@@ -171,7 +172,7 @@ const Index = ({ file }) => {
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-6 px-sm-5">
-                <h2 className="py-sm-5">{welcome.heading}</h2>
+                <h2 className="mb-sm-3">{welcome.heading}</h2>
                 <p>{welcome.para_1}</p>
                 <p>{welcome.para_2}</p>
               </div>
@@ -202,10 +203,14 @@ const Index = ({ file }) => {
                 />
               </div>
               <div className="py-5 col-12 col-sm-6 py-sm-0 px-sm-5 d-sm-flex flex-sm-column justify-content-center align-items-start">
-                <h2 className="mb-5">{about.heading}</h2>
+                <h2 className="mb-sm-3">{about.heading}</h2>
                 <p>{about.para_1}</p>
                 <p>{about.para_2}</p>
-                <Link href="/investors">{about.link}</Link>
+                <Link href="/investors">
+                  <a className="fs-sm-2 fw-bold text-uppercase text-danger mt-sm-2">
+                    {about.link}
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
