@@ -1,7 +1,4 @@
 module.exports = {
-  images: {
-    domains: ["images.ctfassets.net"],
-  },
   env: {
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     REPO_FULL_NAME: process.env.REPO_FULL_NAME,
