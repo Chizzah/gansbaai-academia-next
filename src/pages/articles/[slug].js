@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 import Layout from "../../components/shared/Layout/Layout";
 import { client } from "../../utils/contentfulClient";
@@ -55,7 +55,7 @@ const Article = ({ article }) => {
           <div className="row py-5">
             <div className="col">
               <p className="mb-0 text-muted text-uppercase">
-                {format(new Date(article?.fields.date), "dd MMMM yyyy")}
+                {format(parseISO(article?.fields.date), "dd MMMM yyyy")}
               </p>
               <h1>{article?.fields.title}</h1>
               <p>

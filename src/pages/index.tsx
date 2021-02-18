@@ -9,7 +9,7 @@ import {
 } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { client } from "../utils/contentfulClient";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
@@ -320,7 +320,7 @@ const Index = ({ file, articles }) => {
                           <div>
                             <p className="mb-2 text-muted">
                               {format(
-                                new Date(article.fields.date),
+                                parseISO(article.fields.date),
                                 "dd MMMM yyyy"
                               )}
                             </p>
