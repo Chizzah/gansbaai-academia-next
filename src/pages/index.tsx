@@ -45,8 +45,6 @@ export const getStaticProps: GetStaticProps = async function ({
 };
 
 const Index = ({ file, articles }) => {
-  // console.log(articles);
-
   const formOptions = {
     label: "Home Page",
     fields: [

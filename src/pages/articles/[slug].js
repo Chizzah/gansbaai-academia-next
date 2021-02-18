@@ -34,7 +34,6 @@ export async function getStaticProps({ params }) {
 }
 
 const Article = ({ article }) => {
-  console.log(article);
   return (
     <Layout>
       <article className="container-fluid bg-light">
