@@ -72,7 +72,7 @@ const Article = ({ article }) => {
               <p style={{ maxWidth: "120ch" }}>{article.fields.summary}</p>
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="col">
               {documentToReactComponents(article.fields.content, {
                 renderNode: {
@@ -86,7 +86,7 @@ const Article = ({ article }) => {
                 },
               })}
             </div>
-          </div>
+          </div> */}
         </div>
       </article>
     </Layout>
