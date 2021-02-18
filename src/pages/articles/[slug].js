@@ -41,7 +41,7 @@ const Article = ({ article }) => {
     <Layout>
       <article className="container-fluid bg-light">
         <div className="container py-5">
-          <div className="row">
+          {/* <div className="row">
             <div className="col">
               <Image
                 src={"https:" + article.fields.featuredImage.fields.file.url}
@@ -56,7 +56,7 @@ const Article = ({ article }) => {
                 }
               />
             </div>
-          </div>
+          </div> */}
           <div className="row py-5">
             <div className="col">
               <p className="mb-0 text-muted text-uppercase">
