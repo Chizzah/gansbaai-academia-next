@@ -58,7 +58,7 @@ const Article = ({ article }) => {
               </p>
               <h1>{article?.fields.title}</h1>
               <p>
-                from{" "}
+                by{" "}
                 <span className="text-muted fw-bold">
                   {article?.fields.author.fields.name}
                 </span>
@@ -88,3 +88,5 @@ const Article = ({ article }) => {
     </Layout>
   );
 };
+
+export default Article;
