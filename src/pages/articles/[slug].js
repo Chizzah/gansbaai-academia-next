@@ -6,7 +6,7 @@ import { client } from "../../utils/contentfulClient";
 
 const { BLOCKS } = require("@contentful/rich-text-types");
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
   let data = await client.getEntries({
     content_type: "news",
   });
@@ -17,9 +17,9 @@ export const getStaticPaths = async () => {
     })),
     fallback: true,
   };
-};
+}
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
   let data = await client.getEntries({
     content_type: "news",
     "fields.slug": params.slug,
@@ -31,7 +31,7 @@ export const getStaticProps = async ({ params }) => {
     },
     revalidate: 60,
   };
-};
+}
 
 const Article = ({ article }) => {
   // console.log(article);
@@ -42,12 +42,16 @@ const Article = ({ article }) => {
           <div className="row">
             <div className="col">
               <Image
-                src={`https://${article.fields.image.fields.file.url}`}
-                alt={article.fields.image.fields.file.title}
+                src={`https://${article.fields.featuredImage.fields.file.url}`}
+                alt={article.fields.featuredImage.fields.file.title}
                 layout="responsive"
                 objectFit="cover"
-                width={article.fields.image.fields.file.details.image.width}
-                height={article.fields.image.fields.file.details.image.height}
+                width={
+                  article.fields.featuredImage.fields.file.details.image.width
+                }
+                height={
+                  article.fields.featuredImage.fields.file.details.image.height
+                }
               />
             </div>
           </div>

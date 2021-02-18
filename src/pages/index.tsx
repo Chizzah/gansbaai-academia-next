@@ -305,12 +305,21 @@ const Index = ({ file, articles }) => {
                       <div className="my-5 card my-lg-0">
                         <Image
                           className="card-img-top"
-                          src={"https:" + article.fields.image.fields.file.url}
-                          alt={article.fields.image.fields.file.title}
+                          src={
+                            "https:" +
+                            article.fields.featuredImage.fields.file.url
+                          }
+                          alt={article.fields.featuredImage.fields.file.title}
                           layout="responsive"
                           objectFit="cover"
-                          width="360"
-                          height="360"
+                          width={
+                            article.fields.featuredImage.fields.file.details
+                              .image.width
+                          }
+                          height={
+                            article.fields.featuredImage.fields.file.details
+                              .image.height
+                          }
                         />
                         <div
                           className="card-body d-flex flex-column justify-content-between align-items-start"
