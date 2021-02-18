@@ -305,7 +305,7 @@ const Index = ({ file, articles }) => {
                       <div className="my-5 card my-lg-0">
                         <Image
                           className="card-img-top"
-                          src={`https://${article.fields.image.fields.file.url}`}
+                          src={"https:" + article.fields.image.fields.file.url}
                           alt={article.fields.image.fields.file.title}
                           layout="responsive"
                           objectFit="cover"
