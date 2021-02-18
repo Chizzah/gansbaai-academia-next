@@ -2,7 +2,7 @@ import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { format } from "date-fns";
 
-import Layout from "../../components/Shared/Layout/Layout";
+import Layout from "../../components/shared/Layout/Layout";
 import { client } from "../../utils/contentfulClient";
 
 const { BLOCKS } = require("@contentful/rich-text-types");
@@ -30,6 +30,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       article: data.items[0],
     },
+    revalidate: 60,
   };
 };
 

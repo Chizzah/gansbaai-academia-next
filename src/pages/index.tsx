@@ -11,7 +11,7 @@ import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { client } from "../utils/contentfulClient";
 import { format } from "date-fns";
 
-import Layout from "../components/Shared/Layout/Layout";
+import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
 export const getStaticProps: GetStaticProps = async function ({
@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async function ({
       },
       articles: data.items,
     },
+    revalidate: 60,
   };
 };
 
