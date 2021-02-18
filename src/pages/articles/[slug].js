@@ -34,7 +34,7 @@ export async function getStaticProps({ params }) {
 }
 
 const Article = ({ article }) => {
-  // console.log(article);
+  console.log(article);
   return (
     <Layout>
       <article className="container-fluid bg-light">
@@ -42,7 +42,7 @@ const Article = ({ article }) => {
           <div className="row">
             <div className="col">
               <Image
-                src={`https://${article.fields.featuredImage.fields.file.url}`}
+                src={"https:" + article.fields.featuredImage.fields.file.url}
                 alt={article.fields.featuredImage.fields.file.title}
                 layout="responsive"
                 objectFit="cover"
