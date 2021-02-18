@@ -11,8 +11,10 @@ export async function getStaticPaths() {
     content_type: "news",
   });
 
+  console.log(data);
+
   return {
-    paths: data.items.map((item) => ({
+    paths: data?.items.map((item) => ({
       params: { slug: item.fields.slug },
     })),
     fallback: true,
