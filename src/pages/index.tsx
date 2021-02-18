@@ -9,7 +9,6 @@ import {
 } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { client } from "../utils/contentfulClient";
-import { format, parseISO } from "date-fns";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
@@ -319,10 +318,7 @@ const Index = ({ file, articles }) => {
                         >
                           <div>
                             <p className="mb-2 text-muted">
-                              {format(
-                                parseISO(article.fields.date),
-                                "dd MMMM yyyy"
-                              )}
+                              {article.fields.date}
                             </p>
                             <h5 className="card-title">
                               {article.fields.title}
