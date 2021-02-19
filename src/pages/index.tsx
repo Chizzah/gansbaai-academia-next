@@ -17,6 +17,7 @@ export const getStaticProps: GetStaticProps = async function ({
   preview,
   previewData,
 }) {
+  // TINACMS
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
@@ -25,6 +26,7 @@ export const getStaticProps: GetStaticProps = async function ({
     });
   }
 
+  // CONTENTFUL
   const data = await client.getEntries({
     content_type: "news",
   });
@@ -172,12 +174,12 @@ const Index = ({ file, articles }) => {
 
   usePlugin(form);
 
-  useGithubToolbarPlugins();
+  // useGithubToolbarPlugins();
 
   return (
     <>
       <Head>
-        <title>Gansbaai Academia | High School</title>
+        <title>Home | Gansbaai Academia</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
