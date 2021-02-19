@@ -1,0 +1,253 @@
+{
+  "management": [
+    {
+      "id": 1,
+      "image": "#",
+      "fullName": "Mr Jon Doe",
+      "position": "Interim Co-Headmaster",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "#",
+      "fullName": "Mrs Jane Doe",
+      "position": "Interim Co-Headmaster",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "image": "#",
+      "fullName": "Mrs Jessica Garner",
+      "position": "Head of Department",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "#",
+      "fullName": "Mr Alexander Harrington",
+      "position": "Head of Department",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "image": "#",
+      "fullName": "Mrs Jean Cain",
+      "position": "Head of Department",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "image": "#",
+      "fullName": "Mr Norman Salazar",
+      "position": "Head of Department",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "image": "#",
+      "fullName": "Mrs Ruth Blair",
+      "position": "Head of Department",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "image": "#",
+      "fullName": "Mr Preston Hansen",
+      "position": "Teacher",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "image": "#",
+      "fullName": "Mrs Ada Brady",
+      "position": "Teacher",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "image": "#",
+      "fullName": "Mr Dewey Woods",
+      "position": "Teacher",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "image": "#",
+      "fullName": "Mrs Terry Clarke",
+      "position": "Teacher",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "image": "#",
+      "fullName": "Mr Walter Cobb",
+      "position": "Teacher",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake.",
+      "subjects": [
+        {
+          "name": "Business Economics",
+          "grades": "Grade 10, 11 & Grade 12"
+        },
+        {
+          "name": "Computer Science",
+          "grades": "Grade 8 & Grade 9"
+        }
+      ]
+    }
+  ],
+  "office": [
+    {
+      "id": 1,
+      "image": "#",
+      "fullName": "Mrs Rita Smith",
+      "position": "Secretary",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake."
+    },
+    {
+      "id": 2,
+      "image": "#",
+      "fullName": "Mrs Nadine Bass",
+      "position": "Secretary",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake."
+    },
+    {
+      "id": 3,
+      "image": "#",
+      "fullName": "Mrs Estelle Holt",
+      "position": "Secretary",
+      "about": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake."
+    }
+  ],
+  "grounds": [
+    {
+      "id": 1,
+      "image": "#",
+      "fullName": "Mr Ken Todd",
+      "position": "Groundskeeper"
+    },
+    {
+      "id": 2,
+      "image": "#",
+      "fullName": "Mr Alan Herrera",
+      "position": "Groundskeeper"
+    },
+    {
+      "id": 3,
+      "image": "#",
+      "fullName": "Mr Darrel Grant",
+      "position": "Groundskeeper"
+    }
+  ]
+}

@@ -4,5 +4,49 @@
     "heading": "Gansbaai Academia",
     "para_1": "High School",
     "para_2": "Academia is a no-fees, multicultural school in the heart of Gansbaai."
+  },
+  "about": {
+    "heading": "Our School",
+    "para_1": "Biscuit dragée jelly-o macaroon bear claw powder pudding lemon drops. Icing jelly beans cheesecake powder tiramisu dragée pastry danish. Dragée jelly-o bear claw cotton candy lemondrops carrot cake. Carrot cake pie candy canes sweet roll jelly-o jelly beans icing halvah. Donut candy candy. Jelly-o wafer pie sugar plum tart cheesecake toffee candy chocolate cake. Sugar plum icing wafer sesame snaps dessert muffin dragée biscuit biscuit.",
+    "para_2": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu."
+  },
+  "history": {
+    "heading": "Our History",
+    "para_1": "Biscuit dragée jelly-o macaroon bear claw powder pudding lemon drops. Icing jelly beans cheesecake powder tiramisu dragée pastry danish. Dragée jelly-o bear claw cotton candy lemondrops carrot cake. Carrot cake pie candy canes sweet roll jelly-o jelly beans icing halvah. Donut candy candy. Jelly-o wafer pie sugar plum tart cheesecake toffee candy chocolate cake. Sugar plum icing wafer sesame snaps dessert muffin dragée biscuit biscuit.",
+    "para_2": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
+    "para_3": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu.",
+    "para_4": "Pastry toffee cake jelly beans powder marshmallow. Chupa chups pudding sesame snaps cookie cupcake. Toffee marshmallow sweetroll pie jujubes sweet pie fruitcake. Jelly oat cake muffin bear claw pastry liquorice dessert tart tart. Cookie dessert sesame snaps. Tiramisu sesame snaps chocolate chupa chups. Macaroon jelly beans chupa chups sugar plum chupa chups danish tiramisu."
+  },
+  "curriculum": {
+    "heading": "Our School",
+    "para": "Biscuit dragée jelly-o macaroon bear claw powder pudding lemon drops. Icing jelly beans cheesecake powder tiramisu dragée pastry danish. Dragée jelly-o bear claw cotton candy lemondrops carrot cake. Carrot cake pie candy canes sweet roll jelly-o jelly beans icing halvah. Donut candy candy. Jelly-o wafer pie sugar plum tart cheesecake toffee candy chocolate cake. Sugar plum icing wafer sesame snaps dessert muffin dragée biscuit biscuit.",
+    "core": [
+      {
+        "id": 1,
+        "para": "Home Language Xhosa or Afrikaans"
+      },
+      {
+        "id": 2,
+        "para": "Second Language English"
+      },
+      {
+        "id": 3,
+        "para": "Mathematics or Mathematics Literacy"
+      },
+      {
+        "id": 4,
+        "para": "Life Orientation"
+      }
+    ],
+    "other": [
+      {
+        "id": 1,
+        "para": "Gr 8 – 9: Social Sciences, Natural Sciences, Arts and Culture, Technology, Economic Management Sciences"
+      },
+      {
+        "id": 2,
+        "para": "Gr 10-12 A choice of 3 subjects from Accounting, Business Studies, Computer Applications Technology, Geography, Hospitality Studies, Life Sciences, Physical Sciences or Tourism"
+      }
+    ]
   }
 }

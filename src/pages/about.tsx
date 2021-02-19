@@ -106,43 +106,43 @@ const About = ({ file }) => {
 
         {/* PAGE CONTENT */}
 
-        <section className="container-fluid bg-light">
+        <section className="container-fluid py-5">
           <div className="container">
-            <div className="row">
+            <div className="row d-flex flex-column flex-lg-row">
               {/* MAIN CONTENT */}
 
-              <section className="col-9">
+              <section className="col-12 col-lg-9 order-2 order-lg-1">
                 <div className="container">
                   <div className="row">
-                    <div className="col vh-100 bg-danger">
+                    <div className="col min-vh-100 bg-danger">
                       <h2>SECTION ONE</h2>
                     </div>
                   </div>
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col vh-100 bg-warning">
+                    <div className="col min-vh-100 bg-warning">
                       <h2>SECTION TWO</h2>
                     </div>
                   </div>
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col vh-100 bg-success">
+                    <div className="col min-vh-100 bg-success">
                       <h2>SECTION THREE</h2>
                     </div>
                   </div>
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col vh-100 bg-info">
+                    <div className="col min-vh-100 bg-info">
                       <h2>SECTION FOUR</h2>
                     </div>
                   </div>
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col vh-100 bg-primary">
+                    <div className="col min-vh-100 bg-primary">
                       <h2>SECTION FIVE</h2>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ const About = ({ file }) => {
 
               {/* SIDEBAR CONTENT */}
 
-              <aside className="col-3">
+              <aside className="col-12 col-lg-3 order-1 order-lg-2">
                 <ul>
                   <li>One</li>
                   <li>Two</li>
