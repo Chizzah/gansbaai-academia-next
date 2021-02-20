@@ -9,32 +9,6 @@ import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-export const getStaticProps: GetStaticProps = async function ({
-  preview,
-  previewData,
-}) {
-  // TINACMS
-  if (preview) {
-    return getGithubPreviewProps({
-      ...previewData,
-      fileRelativePath: "content/home.json",
-      parse: parseJson,
-    });
-  }
-
-  return {
-    props: {
-      sourceProvider: null,
-      error: null,
-      preview: false,
-      file: {
-        fileRelativePath: "content/home.json",
-        data: (await import("../../content/home.json")).default,
-      },
-    },
-  };
-};
-
 const Index = ({ file }) => {
   const formOptions = {
     label: "Home Page",
@@ -196,6 +170,7 @@ const Index = ({ file }) => {
             height="1080"
             objectFit="cover"
             objectPosition="bottom"
+            priority={true}
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
           <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
@@ -327,6 +302,32 @@ const Index = ({ file }) => {
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async function ({
+  preview,
+  previewData,
+}) {
+  // TINACMS
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "content/home.json",
+      parse: parseJson,
+    });
+  }
+
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: "content/home.json",
+        data: (await import("../../content/home.json")).default,
+      },
+    },
+  };
 };
 
 export default Index;

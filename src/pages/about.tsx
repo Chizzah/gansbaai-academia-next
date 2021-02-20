@@ -3,39 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 import { usePlugin } from "tinacms";
-import {
-  useGithubJsonForm,
-  useGithubToolbarPlugins,
-} from "react-tinacms-github";
+import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
 import Layout from "../components/shared/Layout/Layout";
-
-export const getStaticProps: GetStaticProps = async function ({
-  preview,
-  previewData,
-}) {
-  if (preview) {
-    return getGithubPreviewProps({
-      ...previewData,
-      fileRelativePath: "content/about.json",
-      parse: parseJson,
-    });
-  }
-
-  return {
-    props: {
-      sourceProvider: null,
-      error: null,
-      preview: false,
-      file: {
-        fileRelativePath: "content/about.json",
-        data: (await import("../../content/about.json")).default,
-      },
-    },
-    revalidate: 60,
-  };
-};
 
 const About = ({ file }) => {
   const formOptions = {
@@ -96,6 +67,7 @@ const About = ({ file }) => {
             height="1080"
             objectFit="cover"
             objectPosition="bottom"
+            priority={true}
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
           <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
@@ -167,6 +139,32 @@ const About = ({ file }) => {
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async function ({
+  preview,
+  previewData,
+}) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "content/about.json",
+      parse: parseJson,
+    });
+  }
+
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: "content/about.json",
+        data: (await import("../../content/about.json")).default,
+      },
+    },
+    revalidate: 60,
+  };
 };
 
 export default About;
