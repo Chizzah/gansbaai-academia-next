@@ -196,7 +196,9 @@ const Staff = ({ file }) => {
 
   const [data, form] = useGithubJsonForm(file, formOptions);
 
-  const { hero, welcome, about, extracurricular, news } = data;
+  const { hero, management, about, extracurricular, news } = data;
+
+  console.log(management);
 
   usePlugin(form);
 
@@ -209,11 +211,22 @@ const Staff = ({ file }) => {
       <Layout>
         {/* Management */}
 
-        <section className="container-fluid">
+        <section className="container-fluid py-5">
           <div className="container">
             <div className="row">
               <div className="col">
-                <h1>hello</h1>
+                <Image
+                  src="https://via.placeholder.com/960x540/f1f1f1.png%20C/O%20https://placeholder.com/"
+                  layout="responsive"
+                  width="960"
+                  height="540"
+                />
+              </div>
+              <div className="col">
+                <h3>{management[0].fullName}</h3>
+                <h4>{management[0].position}</h4>
+                <p>{management[0].about}</p>
+                {/* {management[0].map(item /=)} */}
               </div>
             </div>
           </div>

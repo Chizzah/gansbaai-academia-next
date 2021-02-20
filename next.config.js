@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ["images.ctfassets.net", "via.placeholder.com"],
   },
   env: {
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
