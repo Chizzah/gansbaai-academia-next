@@ -3,12 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 import { usePlugin } from "tinacms";
-import {
-  useGithubJsonForm,
-  useGithubToolbarPlugins,
-} from "react-tinacms-github";
+import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
-import { client } from "../utils/contentfulClient";
 
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
@@ -26,11 +22,6 @@ export const getStaticProps: GetStaticProps = async function ({
     });
   }
 
-  // CONTENTFUL
-  const data = await client.getEntries({
-    content_type: "news",
-  });
-
   return {
     props: {
       sourceProvider: null,
@@ -40,13 +31,11 @@ export const getStaticProps: GetStaticProps = async function ({
         fileRelativePath: "content/home.json",
         data: (await import("../../content/home.json")).default,
       },
-      articles: data.items,
     },
-    revalidate: 60,
   };
 };
 
-const Index = ({ file, articles }) => {
+const Index = ({ file }) => {
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -137,8 +126,23 @@ const Index = ({ file, articles }) => {
         component: "group",
         fields: [
           {
-            label: "Heading",
-            name: "heading",
+            label: "Heading One",
+            name: "heading_1",
+            component: "text",
+          },
+          {
+            label: "Heading Two",
+            name: "heading_2",
+            component: "text",
+          },
+          {
+            label: "Paragraph",
+            name: "para",
+            component: "textarea",
+          },
+          {
+            label: "Link Text",
+            name: "link",
             component: "text",
           },
         ],
@@ -174,8 +178,6 @@ const Index = ({ file, articles }) => {
 
   usePlugin(form);
 
-  // useGithubToolbarPlugins();
-
   return (
     <>
       <Head>
@@ -185,7 +187,7 @@ const Index = ({ file, articles }) => {
 
       <Layout>
         {/* Hero */}
-        <section className="hero position-relative w-100 h-100">
+        <section className="hero position-relative w-100 overflow-hidden">
           <Image
             src={hero.image}
             alt="Mountains"
@@ -193,6 +195,7 @@ const Index = ({ file, articles }) => {
             width="1920"
             height="1080"
             objectFit="cover"
+            objectPosition="bottom"
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
           <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
@@ -293,65 +296,28 @@ const Index = ({ file, articles }) => {
 
         {/* News */}
 
-        <section className="mb-5 container-fluid">
-          <div className="container py-5">
-            <h2 className="py-lg-5">{news.heading}</h2>
+        <section className="container-fluid py-5">
+          <div className="container">
             <div className="row">
-              {articles
-                .sort((a, b) => (b.fields.date > a.fields.date ? 1 : -1))
-                .map((article) => {
-                  return (
-                    <div className="col-12 col-lg-4" key={article.sys.id}>
-                      <div className="my-5 card my-lg-0">
-                        <Image
-                          className="card-img-top"
-                          src={
-                            "https:" +
-                            article.fields.featuredImage.fields.file.url
-                          }
-                          alt={article.fields.featuredImage.fields.file.title}
-                          layout="responsive"
-                          objectFit="cover"
-                          width={
-                            article.fields.featuredImage.fields.file.details
-                              .image.width
-                          }
-                          height={
-                            article.fields.featuredImage.fields.file.details
-                              .image.height
-                          }
-                        />
-                        <div
-                          className="card-body d-flex flex-column justify-content-between align-items-start"
-                          style={{ minHeight: 300 }}
-                        >
-                          <div>
-                            <p className="mb-2 text-muted">
-                              {article.fields.date}
-                            </p>
-                            <h5 className="card-title">
-                              {article.fields.title}
-                            </h5>
-                            <h6 className="card-subtitle mb-2">
-                              by{" "}
-                              <span className="text-muted">
-                                {article.fields.author.fields.name}
-                              </span>
-                            </h6>
-                            <p className="card-text">
-                              {article.fields.summary}
-                            </p>
-                          </div>
-                          <div>
-                            <Link href={`/articles/${article.fields.slug}`}>
-                              <a>Continue Reading...</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+              <h2 className="mb-sm-5">{news.heading_1}</h2>
+            </div>
+            <div className="row w-100 h-100 d-flex justify-content-center align-items-center">
+              <div className="col-12 col-lg-6 h-100">
+                <Image
+                  src="/images/gansbaai-academia-news.jpg"
+                  width="720"
+                  height="480"
+                />
+              </div>
+              <div className="col-12 col-lg-6 h-100 px-lg-5">
+                <h3>{news.heading_2}</h3>
+                <p>{news.para}</p>
+                <Link href="/news">
+                  <a className="btn btn-danger btn-lg text-light" role="button">
+                    {news.link}
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

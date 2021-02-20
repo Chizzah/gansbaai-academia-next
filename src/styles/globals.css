@@ -37,6 +37,9 @@ svg {
 }
 
 @media (min-width: 1400px) {
+  .hero {
+    height: 80vh !important;
+  }
   svg {
     width: 60px;
     height: 60px;

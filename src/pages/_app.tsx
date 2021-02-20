@@ -59,7 +59,7 @@ const App = ({ Component, pageProps }) => {
         error={pageProps.error}
       >
         <EditLink cms={cms} />
-        <Component {...pageProps} />
+        <Component cms={cms} {...pageProps} />
       </TinacmsGithubProvider>
     </TinaProvider>
   );
