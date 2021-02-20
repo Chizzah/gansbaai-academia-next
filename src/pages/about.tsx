@@ -87,7 +87,7 @@ const About = ({ file }) => {
       <Layout>
         {/* HERO */}
 
-        <section className="hero position-relative w-100 h-100">
+        <section className="hero position-relative w-100 overflow-hidden">
           <Image
             src={hero.image}
             alt="Mountains"
@@ -95,6 +95,7 @@ const About = ({ file }) => {
             width="1920"
             height="1080"
             objectFit="cover"
+            objectPosition="bottom"
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
           <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
