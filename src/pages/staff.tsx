@@ -6,6 +6,8 @@ import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
 import Layout from "../components/shared/Layout/Layout";
+import ManagementList from "../components/ManagementList/ManagementList";
+import TeacherList from "../components/TeacherList/TeacherList";
 
 export const getStaticProps: GetStaticProps = async function ({
   preview,
@@ -196,9 +198,7 @@ const Staff = ({ file }) => {
 
   const [data, form] = useGithubJsonForm(file, formOptions);
 
-  const { hero, management, about, extracurricular, news } = data;
-
-  console.log(management);
+  const { hero, management, teachers } = data;
 
   usePlugin(form);
 
@@ -209,64 +209,33 @@ const Staff = ({ file }) => {
       </Head>
 
       <Layout>
-        {/* Management */}
+        {/* HERO */}
 
-        <section className="container-fluid py-5">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <Image
-                  src="https://via.placeholder.com/960x540/f1f1f1.png%20C/O%20https://placeholder.com/"
-                  layout="responsive"
-                  width="960"
-                  height="540"
-                />
-              </div>
-              <div className="col">
-                <h3>{management[0].fullName}</h3>
-                <h4>{management[0].position}</h4>
-                <p>{management[0].about}</p>
-                {/* {management[0].map(item /=)} */}
-              </div>
-            </div>
+        <section className="hero position-relative w-100 overflow-hidden">
+          <Image
+            src={hero.image}
+            alt="Mountains"
+            layout="responsive"
+            width="1920"
+            height="1080"
+            objectFit="cover"
+            objectPosition="bottom"
+            priority={true}
+          />
+          <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
+          <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+            <p className="mb-0 fw-bolder text-warning">{hero.para_1}</p>
+            <h1 className="fs-2 text-uppercase fs-lg-1">{hero.heading}</h1>
+            <p className="px-3 px-md-0">{hero.para_2}</p>
           </div>
         </section>
+        {/* Management */}
+
+        <ManagementList management={management} />
 
         {/* Teachers */}
 
-        <section className="container-fluid">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <h1>hello</h1>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Office */}
-
-        <section className="container-fluid">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <h1>hello</h1>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Grounds */}
-
-        <section className="container-fluid">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <h1>hello</h1>
-              </div>
-            </div>
-          </div>
-        </section>
+        <TeacherList teachers={teachers} />
       </Layout>
     </>
   );

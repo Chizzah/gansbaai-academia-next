@@ -36,10 +36,24 @@ svg {
   height: 30px;
 }
 
+@media (min-width: 996px) {
+  .management div:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .teacher div:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
 @media (min-width: 1400px) {
   .hero {
     height: 80vh !important;
   }
+
   svg {
     width: 60px;
     height: 60px;
