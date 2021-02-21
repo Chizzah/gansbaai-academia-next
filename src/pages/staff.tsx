@@ -94,13 +94,13 @@ const Staff = ({ file }) => {
             component: "textarea",
           },
           {
-            label: "About",
-            name: "about",
+            label: "Subjects",
+            name: "subjects",
             component: "group-list",
             fields: [
               {
-                label: "Name",
-                name: "Name",
+                label: "Subject",
+                name: "subject",
                 component: "text",
               },
               {
@@ -113,83 +113,46 @@ const Staff = ({ file }) => {
         ],
       },
       {
-        label: "About",
-        name: "about",
-        component: "group",
-        fields: [
-          {
-            label: "Image",
-            name: "image",
-            component: "image",
-          },
-          {
-            label: "Heading",
-            name: "heading",
-            component: "text",
-          },
-          {
-            label: "Paragraph 1",
-            name: "para_1",
-            component: "textarea",
-          },
-          {
-            label: "Paragraph 2",
-            name: "para_2",
-            component: "textarea",
-          },
-          {
-            label: "Link Text",
-            name: "link",
-            component: "text",
-          },
-        ],
-      },
-      {
-        label: "News",
-        name: "news",
-        component: "group",
-        fields: [
-          {
-            label: "Heading One",
-            name: "heading_1",
-            component: "text",
-          },
-          {
-            label: "Heading Two",
-            name: "heading_2",
-            component: "text",
-          },
-          {
-            label: "Paragraph",
-            name: "para",
-            component: "textarea",
-          },
-          {
-            label: "Link Text",
-            name: "link",
-            component: "text",
-          },
-        ],
-      },
-      {
-        label: "Extracurricular",
-        name: "extracurricular",
+        label: "Teachers",
+        name: "teachers",
         component: "group-list",
         fields: [
           {
-            label: "Href",
-            name: "href",
-            component: "text",
-          },
-          {
             label: "Image",
             name: "image",
             component: "image",
           },
           {
-            label: "Heading",
-            name: "heading",
+            label: "Full Name",
+            name: "fullName",
             component: "text",
+          },
+          {
+            label: "Position",
+            name: "position",
+            component: "text",
+          },
+          {
+            label: "About",
+            name: "about",
+            component: "textarea",
+          },
+          {
+            label: "Subjects",
+            name: "subjects",
+            component: "group-list",
+            fields: [
+              {
+                label: "Subject",
+                name: "subject",
+                component: "text",
+              },
+              {
+                label: "Grades",
+                name: "grades",
+                component: "text",
+              },
+            ],
           },
         ],
       },
