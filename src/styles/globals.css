@@ -24,11 +24,15 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  z-index: -1;
 }
 
 .overlay {
   background: rgba(0, 0, 0, 0.5);
+  z-index: 10 !important;
+}
+
+.hero_content {
+  z-index: 20 !important;
 }
 
 svg {

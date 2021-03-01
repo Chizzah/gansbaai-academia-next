@@ -9,35 +9,8 @@ import Layout from "../components/shared/Layout/Layout";
 import ManagementList from "../components/ManagementList/ManagementList";
 import TeacherList from "../components/TeacherList/TeacherList";
 
-export const getStaticProps: GetStaticProps = async function ({
-  preview,
-  previewData,
-}) {
-  // TINACMS
-  if (preview) {
-    return getGithubPreviewProps({
-      ...previewData,
-      fileRelativePath: "content/staff.json",
-      parse: parseJson,
-    });
-  }
-
-  // file is variable like article or events
-
-  return {
-    props: {
-      sourceProvider: null,
-      error: null,
-      preview: false,
-      file: {
-        fileRelativePath: "content/staff.json",
-        data: (await import("../../content/staff.json")).default,
-      },
-    },
-  };
-};
-
 const Staff = ({ file }) => {
+  // Try to abstract forms for smaller component size
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -202,6 +175,34 @@ const Staff = ({ file }) => {
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async function ({
+  preview,
+  previewData,
+}) {
+  // TINACMS
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "content/staff.json",
+      parse: parseJson,
+    });
+  }
+
+  // file is variable like article or events
+
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: "content/staff.json",
+        data: (await import("../../content/staff.json")).default,
+      },
+    },
+  };
 };
 
 export default Staff;

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,10 +7,17 @@ import { usePlugin } from "tinacms";
 import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
+import MoreStories from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import { getAllPosts } from "../lib/api";
+import Intro from "../components/intro";
+
 import Layout from "../components/shared/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-const Index = ({ file }) => {
+const Index = ({ file, allPosts }) => {
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -152,6 +160,11 @@ const Index = ({ file }) => {
 
   usePlugin(form);
 
+  // const [showModal, setShowModal] = useState(false);
+
+  // function redirectAndCloses() {
+  //   setShowModal(!showModal);
+  // }
   return (
     <>
       <Head>
@@ -160,7 +173,99 @@ const Index = ({ file }) => {
       </Head>
 
       <Layout>
+        {/* Modal */}
+        <section
+          className="modal fade"
+          id="exploreModal"
+          aria-labelledby="exploreModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered modal-xl">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h2 className="modal-title fs-3 fs-lg-2" id="exploreModalLabel">
+                  Explore Gansbaai Academia
+                </h2>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body p-0">
+                <div className="row g-0">
+                  <div className="col-12 col-lg-4 position-relative order-2 order-lg-1">
+                    <Link href="/investors">
+                      <a>
+                        <Image
+                          src="/images/investors.jpg"
+                          alt="Investors"
+                          layout="responsive"
+                          width="480"
+                          height="720"
+                        />
+                        <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
+                        <div className="hero_content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+                          <h3 className="text-uppercase">Investors</h3>
+                          <p className="py-1 px-3">
+                            Find out how to become a sponsor and what your
+                            investment can do for Gansbaai Academia.
+                          </p>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="col-12 col-lg-4 position-relative order-1 order-lg-2">
+                    <Link href="/parents">
+                      <a>
+                        <Image
+                          src="/images/parents.jpg"
+                          alt="Parents"
+                          layout="responsive"
+                          width="480"
+                          height="720"
+                        />
+                        <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
+                        <div className="hero_content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+                          <h3 className="text-uppercase">Parents</h3>
+                          <p className="py-1 px-3">
+                            Learn more about Gansbaai Academia and what it
+                            offers your child.
+                          </p>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="col-12 col-lg-4 position-relative order-3">
+                    <Link href="/student-portal">
+                      <a>
+                        <Image
+                          src="/images/students.jpg"
+                          alt="Students"
+                          layout="responsive"
+                          width="480"
+                          height="720"
+                        />
+                        <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
+                        <div className="hero_content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+                          <h3 className="text-uppercase">Students</h3>
+                          <p className="py-1 px-3">
+                            Find the latest learning resources and study
+                            material in our Student Portal.
+                          </p>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Hero */}
+
         <section className="hero position-relative w-100 overflow-hidden">
           <Image
             src={hero.image}
@@ -173,10 +278,18 @@ const Index = ({ file }) => {
             priority={true}
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
-          <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+          <div className="hero_content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
             <p className="mb-0 fw-bolder text-warning">{hero.para_1}</p>
             <h1 className="fs-2 text-uppercase fs-lg-1">{hero.heading}</h1>
             <p className="px-3 px-md-0">{hero.para_2}</p>
+            <button
+              type="button"
+              className="btn btn-danger btn-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#exploreModal"
+            >
+              Explore Academia
+            </button>
           </div>
         </section>
 
@@ -297,6 +410,19 @@ const Index = ({ file }) => {
           </div>
         </section>
 
+        <Intro />
+        {heroPost && (
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            date={heroPost.date}
+            author={heroPost.author}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+          />
+        )}
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+
         {/* Sponsors */}
         <Sponsors />
       </Layout>
@@ -308,13 +434,29 @@ export const getStaticProps: GetStaticProps = async function ({
   preview,
   previewData,
 }) {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
+
   // TINACMS
   if (preview) {
-    return getGithubPreviewProps({
+    const githubPreviewProps = await getGithubPreviewProps({
       ...previewData,
       fileRelativePath: "content/home.json",
       parse: parseJson,
     });
+
+    return {
+      props: {
+        allPosts,
+        ...githubPreviewProps.props,
+      },
+    };
   }
 
   return {

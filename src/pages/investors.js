@@ -5,6 +5,7 @@ const Investors = () => {
     <Layout>
       <div>
         <h1>Investors</h1>
+        <button onClick={() => alert("I was clicked!")}>click me!</button>
       </div>
     </Layout>
   );

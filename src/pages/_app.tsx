@@ -59,7 +59,7 @@ const App = ({ Component, pageProps }) => {
         error={pageProps.error}
       >
         <EditLink cms={cms} />
-        <Component cms={cms} {...pageProps} />
+        <Component {...pageProps} />
       </TinacmsGithubProvider>
     </TinaProvider>
   );
@@ -73,7 +73,10 @@ export interface EditLinkProps {
 
 export const EditLink = ({ cms }: EditLinkProps) => {
   return (
-    <button onClick={() => cms.toggle()}>
+    <button
+      className="mx-3 mt-2 btn btn-outline-danger btn-sm"
+      onClick={() => cms.toggle()}
+    >
       {cms.enabled ? "Exit Edit Mode" : "Edit This Site"}
     </button>
   );
