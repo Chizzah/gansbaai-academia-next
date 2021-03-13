@@ -7,18 +7,21 @@ import { usePlugin } from "tinacms";
 import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
-// import MoreStories from "../components/more-stories";
-// import HeroPost from "../components/hero-post";
-// import { getAllPosts } from "../lib/api";
-// import Intro from "../components/intro";
-
-import Layout from "../components/shared/Layout/Layout";
+import Layout from "../components/Shared/Layout/Layout";
 import HomeModal from "../components/HomeModal/HomeModal";
 import Sponsors from "../components/Sponsors/Sponsors";
 
-const Index = ({ file, allPosts }) => {
-  // const heroPost = allPosts[0];
-  // const morePosts = allPosts.slice(1);
+const Index = ({ file }) => {
+  const [visible, setVisible] = useState(false);
+
+  const openModal = () => {
+    setVisible(true);
+  };
+
+  const closeModal = () => {
+    setVisible(false);
+  };
+
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -161,22 +164,6 @@ const Index = ({ file, allPosts }) => {
 
   usePlugin(form);
 
-  // const [showModal, setShowModal] = useState(false);
-
-  // function redirectAndCloses() {
-  //   setShowModal(!showModal);
-  // }
-
-  const [visible, setVisible] = useState(false);
-
-  const openModal = () => {
-    setVisible(true);
-  };
-
-  const closeModal = () => {
-    setVisible(false);
-  };
-
   return (
     <>
       <Head>
@@ -184,38 +171,10 @@ const Index = ({ file, allPosts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
+      <Layout hero={hero} openModal={openModal}>
         {/* Modal */}
 
         <HomeModal visible={visible} closeModal={closeModal} />
-
-        {/* Hero */}
-
-        <section className="hero position-relative w-100 overflow-hidden">
-          <Image
-            src={hero.image}
-            alt="Mountains"
-            layout="responsive"
-            width="1920"
-            height="1080"
-            objectFit="cover"
-            objectPosition="bottom"
-            priority={true}
-          />
-          <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
-          <div className="hero_content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
-            <p className="mb-0 fw-bolder text-warning">{hero.para_1}</p>
-            <h1 className="fs-2 text-uppercase fs-lg-1">{hero.heading}</h1>
-            <p className="px-3 px-md-0">{hero.para_2}</p>
-            <button
-              type="button"
-              className="btn btn-danger btn-sm"
-              onClick={openModal}
-            >
-              Explore Academia
-            </button>
-          </div>
-        </section>
 
         {/* Sponsors */}
 
@@ -336,76 +295,11 @@ const Index = ({ file, allPosts }) => {
           </div>
         </section>
 
-        {/* <Intro />
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
-
-        {/* Sponsors */}
         <Sponsors />
       </Layout>
     </>
   );
 };
-
-// export const getStaticProps: GetStaticProps = async function ({
-//   preview,
-//   previewData,
-// }) {
-//   // TINACMS
-//   if (preview) {
-//     return getGithubPreviewProps({
-//       ...previewData,
-//       fileRelativePath: "content/home.json",
-//       parse: parseJson,
-//     });
-//   }
-
-//   const allPosts = getAllPosts([
-//     "title",
-//     "date",
-//     "slug",
-//     "author",
-//     "coverImage",
-//     "excerpt",
-//   ]);
-
-//   if (preview) {
-//     const githubPreviewProps = await getGithubPreviewProps({
-//       ...previewData,
-//       fileRelativePath: "content/home.json",
-//       parse: parseJson,
-//     });
-
-//     return {
-//       props: {
-//         allPosts,
-//         ...githubPreviewProps.props,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: {
-//       sourceProvider: null,
-//       error: null,
-//       preview: false,
-//       file: {
-//         fileRelativePath: "content/home.json",
-//         data: (await import("../../content/home.json")).default,
-//       },
-//       allPosts,
-//     },
-//   };
-// };
 
 export const getStaticProps: GetStaticProps = async function ({
   preview,

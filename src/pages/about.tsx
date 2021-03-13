@@ -1,12 +1,11 @@
 import { useRef, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import { GetStaticProps } from "next";
 import { usePlugin } from "tinacms";
 import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
-import Layout from "../components/shared/Layout/Layout";
+import Layout from "../components/Shared/Layout/Layout";
 
 const useMountEffect = (fun) => useEffect(fun, []);
 
@@ -178,28 +177,7 @@ const About = ({ file }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
-        {/* HERO */}
-
-        <section className="hero position-relative w-100 overflow-hidden">
-          <Image
-            src={hero.image}
-            alt="Mountains"
-            layout="responsive"
-            width="1920"
-            height="1080"
-            objectFit="cover"
-            objectPosition="bottom"
-            priority={true}
-          />
-          <div className="overlay position-absolute top-0 start-0 w-100 h-100" />
-          <div className="hero_content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
-            <p className="mb-0 fw-bolder text-warning">{hero.para_1}</p>
-            <h1 className="fs-2 text-uppercase fs-lg-1">{hero.heading}</h1>
-            <p className="px-3 px-md-0">{hero.para_2}</p>
-          </div>
-        </section>
-
+      <Layout hero={hero}>
         {/* PAGE CONTENT */}
 
         <section className="container-fluid py-5">

@@ -5,7 +5,7 @@ import { usePlugin } from "tinacms";
 import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
-import Layout from "../components/shared/Layout/Layout";
+import Layout from "../components/Shared/Layout/Layout";
 import ManagementList from "../components/ManagementList/ManagementList";
 import TeacherList from "../components/TeacherList/TeacherList";
 
@@ -144,7 +144,7 @@ const Staff = ({ file }) => {
         <title>Staff | Gansbaai Academia</title>
       </Head>
 
-      <Layout>
+      <Layout hero={hero}>
         {/* HERO */}
 
         <section className="hero position-relative w-100 overflow-hidden">
