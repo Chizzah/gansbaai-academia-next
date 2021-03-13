@@ -7,18 +7,18 @@ import { usePlugin } from "tinacms";
 import { useGithubJsonForm } from "react-tinacms-github";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import { getAllPosts } from "../lib/api";
-import Intro from "../components/intro";
+// import MoreStories from "../components/more-stories";
+// import HeroPost from "../components/hero-post";
+// import { getAllPosts } from "../lib/api";
+// import Intro from "../components/intro";
 
 import Layout from "../components/shared/Layout/Layout";
 import HomeModal from "../components/HomeModal/HomeModal";
 import Sponsors from "../components/Sponsors/Sponsors";
 
 const Index = ({ file, allPosts }) => {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
+  // const heroPost = allPosts[0];
+  // const morePosts = allPosts.slice(1);
   const formOptions = {
     label: "Home Page",
     fields: [
@@ -356,11 +356,61 @@ const Index = ({ file, allPosts }) => {
   );
 };
 
+// export const getStaticProps: GetStaticProps = async function ({
+//   preview,
+//   previewData,
+// }) {
+//   // TINACMS
+//   if (preview) {
+//     return getGithubPreviewProps({
+//       ...previewData,
+//       fileRelativePath: "content/home.json",
+//       parse: parseJson,
+//     });
+//   }
+
+//   const allPosts = getAllPosts([
+//     "title",
+//     "date",
+//     "slug",
+//     "author",
+//     "coverImage",
+//     "excerpt",
+//   ]);
+
+//   if (preview) {
+//     const githubPreviewProps = await getGithubPreviewProps({
+//       ...previewData,
+//       fileRelativePath: "content/home.json",
+//       parse: parseJson,
+//     });
+
+//     return {
+//       props: {
+//         allPosts,
+//         ...githubPreviewProps.props,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: {
+//       sourceProvider: null,
+//       error: null,
+//       preview: false,
+//       file: {
+//         fileRelativePath: "content/home.json",
+//         data: (await import("../../content/home.json")).default,
+//       },
+//       allPosts,
+//     },
+//   };
+// };
+
 export const getStaticProps: GetStaticProps = async function ({
   preview,
   previewData,
 }) {
-  // TINACMS
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
@@ -368,31 +418,6 @@ export const getStaticProps: GetStaticProps = async function ({
       parse: parseJson,
     });
   }
-
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
-
-  // if (preview) {
-  //   const githubPreviewProps = await getGithubPreviewProps({
-  //     ...previewData,
-  //     fileRelativePath: "content/home.json",
-  //     parse: parseJson,
-  //   });
-
-  //   return {
-  //     props: {
-  //       allPosts,
-  //       ...githubPreviewProps.props,
-  //     },
-  //   };
-  // }
-
   return {
     props: {
       sourceProvider: null,
@@ -402,7 +427,6 @@ export const getStaticProps: GetStaticProps = async function ({
         fileRelativePath: "content/home.json",
         data: (await import("../../content/home.json")).default,
       },
-      allPosts,
     },
   };
 };
