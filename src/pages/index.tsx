@@ -186,6 +186,7 @@ const Index = ({ file, allPosts }) => {
 
       <Layout>
         {/* Modal */}
+
         <HomeModal visible={visible} closeModal={closeModal} />
 
         {/* Hero */}
@@ -217,6 +218,7 @@ const Index = ({ file, allPosts }) => {
         </section>
 
         {/* Sponsors */}
+
         <Sponsors />
 
         {/* Welcome */}
@@ -270,6 +272,7 @@ const Index = ({ file, allPosts }) => {
         </section>
 
         {/* Extracurricular */}
+
         <section className="py-5 container-fluid bg-danger">
           <div className="container py-lg-5">
             <div className="row">
