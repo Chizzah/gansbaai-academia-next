@@ -39,12 +39,66 @@ const About = ({ file }) => {
           },
         ],
       },
+      {
+        label: "About",
+        name: "about",
+        component: "group",
+        fields: [
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
+          },
+          {
+            label: "Paragraph 1",
+            name: "para_1",
+            component: "textarea",
+          },
+          {
+            label: "Paragraph 2",
+            name: "para_2",
+            component: "textarea",
+          },
+        ],
+      },
+      {
+        label: "History",
+        name: "history",
+        component: "group",
+        fields: [
+          {
+            label: "Heading",
+            name: "heading",
+            component: "text",
+          },
+          {
+            label: "Paragraph 1",
+            name: "para_1",
+            component: "textarea",
+          },
+          {
+            label: "Paragraph 2",
+            name: "para_2",
+            component: "textarea",
+          },
+          {
+            label: "Paragraph 3",
+            name: "para_3",
+            component: "textarea",
+          },
+          {
+            label: "Paragraph 4",
+            name: "para_4",
+            component: "textarea",
+          },
+        ],
+      },
     ],
   };
 
   const [data, form] = useGithubJsonForm(file, formOptions);
 
-  const { hero } = data;
+  const { hero, about, history } = data;
 
   usePlugin(form);
 
@@ -88,14 +142,20 @@ const About = ({ file }) => {
                 <div className="container">
                   <div className="row">
                     <div className="col min-vh-100 bg-danger">
-                      <h2>SECTION ONE</h2>
+                      <h2 className="mb-sm-3">{about.heading}</h2>
+                      <p>{about.para_1}</p>
+                      <p>{about.para_2}</p>
                     </div>
                   </div>
                 </div>
                 <div className="container">
                   <div className="row">
                     <div className="col min-vh-100 bg-warning">
-                      <h2>SECTION TWO</h2>
+                      <h2 className="mb-sm-3">{history.heading}</h2>
+                      <p>{history.para_1}</p>
+                      <p>{history.para_2}</p>
+                      <p>{history.para_3}</p>
+                      <p>{history.para_4}</p>
                     </div>
                   </div>
                 </div>
