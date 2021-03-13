@@ -361,13 +361,13 @@ export const getStaticProps: GetStaticProps = async function ({
   previewData,
 }) {
   // TINACMS
-  // if (preview) {
-  //   return getGithubPreviewProps({
-  //     ...previewData,
-  //     fileRelativePath: "content/home.json",
-  //     parse: parseJson,
-  //   });
-  // }
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: "content/home.json",
+      parse: parseJson,
+    });
+  }
 
   const allPosts = getAllPosts([
     "title",
@@ -378,20 +378,20 @@ export const getStaticProps: GetStaticProps = async function ({
     "excerpt",
   ]);
 
-  if (preview) {
-    const githubPreviewProps = await getGithubPreviewProps({
-      ...previewData,
-      fileRelativePath: "content/home.json",
-      parse: parseJson,
-    });
+  // if (preview) {
+  //   const githubPreviewProps = await getGithubPreviewProps({
+  //     ...previewData,
+  //     fileRelativePath: "content/home.json",
+  //     parse: parseJson,
+  //   });
 
-    return {
-      props: {
-        allPosts,
-        ...githubPreviewProps.props,
-      },
-    };
-  }
+  //   return {
+  //     props: {
+  //       allPosts,
+  //       ...githubPreviewProps.props,
+  //     },
+  //   };
+  // }
 
   return {
     props: {
